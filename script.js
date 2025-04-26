@@ -239,3 +239,29 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(skillsSection);
     }
 });
+
+// Configuración para el botón de mostrar más certificaciones
+const showMoreCertsBtn = document.getElementById('show-more-certs');
+const moreCertsSection = document.getElementById('more-certifications');
+
+if (showMoreCertsBtn && moreCertsSection) {
+    showMoreCertsBtn.addEventListener('click', function () {
+        const isHidden = moreCertsSection.classList.toggle('hidden-content');
+        this.classList.toggle('active');
+
+        // Actualizar icono
+        const icon = this.querySelector('i');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+
+        // Actualizar texto según el idioma
+        const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
+        const textSpan = this.querySelector('span');
+
+        if (currentLang === 'es') {
+            textSpan.textContent = isHidden ? 'Mostrar más certificaciones' : 'Mostrar menos certificaciones';
+        } else {
+            textSpan.textContent = isHidden ? 'Show more certifications' : 'Show fewer certifications';
+        }
+    });
+}

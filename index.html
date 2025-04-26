@@ -295,6 +295,7 @@
                 <h2 class="section-title en-content">Certifications</h2>
 
                 <div class="certifications-container">
+                    <!-- Certificaciones visibles inicialmente -->
                     <div class="certification-item">
                         <div class="certification-header">
                             <div class="certification-title">Scrum Master Professional Certificate (SMPC®)</div>
@@ -318,18 +319,9 @@
                         </div>
                         <div class="certification-issuer">HackerRank</div>
                     </div>
-                </div>
 
-                <div class="show-more-container">
-                    <button id="show-more-certs" class="show-more-btn">
-                        <span class="es-content">Mostrar más certificaciones</span>
-                        <span class="en-content">Show more certifications</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                </div>
-
-                <div id="more-certifications" class="hidden-content">
-                    <div class="certifications-container">
+                    <!-- Certificaciones adicionales (ocultas inicialmente) -->
+                    <div id="more-certifications" class="hidden-content">
                         <div class="certification-item">
                             <div class="certification-header">
                                 <div class="certification-title">Master Web Api ASP NET Core 9</div>
@@ -345,9 +337,15 @@
                             </div>
                             <div class="certification-issuer">HackerRank</div>
                         </div>
-
-                        <!-- Additional certifications would go here -->
                     </div>
+                </div>
+
+                <div class="show-more-container">
+                    <button id="show-more-certs" class="show-more-btn">
+                        <span class="es-content">Mostrar más certificaciones</span>
+                        <span class="en-content">Show more certifications</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
                 </div>
             </section>
 
