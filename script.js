@@ -1,184 +1,241 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Language switching functionality
-    const langButtons = document.querySelectorAll('.lang-btn');
+    const langButtons = document.querySelectorAll('.language-btn');
+    const body = document.body;
+
+    // Set initial language based on HTML lang attribute
+    const initialLang = body.getAttribute('lang') || 'es';
+    setActiveLanguage(initialLang);
 
     langButtons.forEach(button => {
         button.addEventListener('click', function () {
-            // Remove active class from all buttons
-            langButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-
-            // Get selected language
             const lang = this.getAttribute('data-lang');
-
-            // Hide all language-specific elements
-            document.querySelectorAll('.lang-en, .lang-es').forEach(el => {
-                el.style.display = 'none';
-            });
-
-            // Show elements for selected language
-            document.querySelectorAll(`.lang-${lang}`).forEach(el => {
-                el.style.display = '';
-            });
+            body.setAttribute('lang', lang);
+            setActiveLanguage(lang);
+            calculateExperienceDurations(); // Update durations on language change
         });
     });
 
-    // Show more experience functionality
-    const showMoreBtn = document.getElementById('show-more-btn');
-    const moreExperience = document.getElementById('more-experience');
-
-    if (showMoreBtn && moreExperience) {
-        showMoreBtn.addEventListener('click', function () {
-            if (moreExperience.style.display === 'none') {
-                moreExperience.style.display = 'block';
-                this.textContent = this.textContent.includes('Show') ? 'Show Less Experience' : 'Mostrar Menos Experiencia';
+    function setActiveLanguage(lang) {
+        // Update active state of language buttons
+        langButtons.forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
             } else {
-                moreExperience.style.display = 'none';
-                this.textContent = this.textContent.includes('Less') ? 'Show More Experience' : 'Mostrar Más Experiencia';
+                btn.classList.remove('active');
             }
         });
     }
 
-    // Contact form submission
-    const contactForm = document.getElementById('contact-form');
+    // Show more/less functionality with a common handler
+    function setupShowMore(buttonId, contentId) {
+        const button = document.getElementById(buttonId);
+        const content = document.getElementById(contentId);
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
+        if (!button || !content) return;
 
-            // Get form values
-            const formData = new FormData(contactForm);
-            const currentLang = document.querySelector('.lang-btn.active').getAttribute('data-lang');
+        button.addEventListener('click', function () {
+            const isExpanded = content.classList.toggle('hidden-content');
+            this.classList.toggle('active');
 
-            try {
-                // Mostrar indicador de carga
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const originalBtnText = submitBtn.textContent;
-                submitBtn.disabled = true;
-                submitBtn.textContent = currentLang === 'en' ? 'Sending...' : 'Enviando...';
+            // Update button text and icon
+            const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
+            const icon = this.querySelector('i');
+            const textSpan = this.querySelector('span');
 
-                // Enviar a Formspree
-                const response = await fetch('https://formspree.io/f/myyayyya', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+            if (isExpanded) {
+                icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+            } else {
+                icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+            }
 
-                if (response.ok) {
-                    if (currentLang === 'en') {
-                        alert(`Thank you, ${formData.get('name')}! Your message has been sent successfully. I'll get back to you soon.`);
-                    } else {
-                        alert(`¡Gracias, ${formData.get('name')}! Tu mensaje ha sido enviado con éxito. Me pondré en contacto contigo pronto.`);
-                    }
-                    contactForm.reset();
-                } else {
-                    throw new Error('Form submission failed');
+            // Update text based on language and state
+            const translations = {
+                'skills': {
+                    'en': ['Show more skills', 'Show less skills'],
+                    'es': ['Mostrar más habilidades', 'Mostrar menos habilidades']
+                },
+                'exp': {
+                    'en': ['Show more experience', 'Show less experience'],
+                    'es': ['Mostrar más experiencia', 'Mostrar menos experiencia']
+                },
+                'certs': {
+                    'en': ['Show more certifications', 'Show less certifications'],
+                    'es': ['Mostrar más certificaciones', 'Mostrar menos certificaciones']
                 }
-            } catch (error) {
-                if (currentLang === 'en') {
-                    alert('There was an error sending your message. Please try again later or contact me directly at faridmaloof@gmail.com');
-                } else {
-                    alert('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente más tarde o contáctame directamente a faridmaloof@gmail.com');
-                }
-                console.error('Form submission error:', error);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
+            };
+
+            const type = buttonId.split('-')[2]; // 'skills', 'exp', or 'certs'
+            const [moreText, lessText] = translations[type][currentLang];
+            textSpan.textContent = isExpanded ? moreText : lessText;
+        });
+    }
+
+    // Set up all show more/less sections
+    setupShowMore('show-more-skills', 'more-skills');
+    setupShowMore('show-more-exp', 'more-experience');
+    setupShowMore('show-more-certs', 'more-certifications');
+
+    // Calculate experience durations
+    function calculateExperienceDurations() {
+        const experienceItems = document.querySelectorAll('.timeline-item');
+
+        experienceItems.forEach(item => {
+            const dateElement = item.querySelector('.timeline-date');
+            if (!dateElement) return;
+
+            const dateText = dateElement.textContent;
+            if (!dateText.includes('Present') && !dateText.includes('Presente')) return;
+
+            // Extract dates from text
+            const dateParts = dateText.split(' - ');
+            const startDateStr = dateParts[0];
+            const endDateStr = dateParts[1].includes('Present') || dateParts[1].includes('Presente') ? new Date() : dateParts[1];
+
+            // Convert to Date objects
+            const startDate = parseDate(startDateStr);
+            const endDate = endDateStr instanceof Date ? endDateStr : parseDate(endDateStr);
+
+            // Calculate difference
+            const duration = calculateDateDifference(startDate, endDate);
+
+            // Update the duration span
+            const durationSpan = item.querySelector('.duration');
+            if (durationSpan) {
+                durationSpan.textContent = duration;
             }
         });
     }
 
-    // Smooth scrolling for navigation
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    // Helper function to parse dates in "MMM YYYY" format (e.g., "Jun 2023")
+    function parseDate(dateStr) {
+        if (dateStr === 'Present' || dateStr === 'Presente') return new Date();
 
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+        const months = {
+            'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+            'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11,
+            'Ene': 0, 'Feb': 1, 'Mar': 2, 'Abr': 3, 'May': 4, 'Jun': 5,
+            'Jul': 6, 'Ago': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dic': 11
+        };
 
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+        const parts = dateStr.split(' ');
+        const month = months[parts[0]];
+        const year = parseInt(parts[1]);
+
+        return new Date(year, month, 1);
+    }
+
+    // Helper function to calculate date difference in "X years Y months" format
+    function calculateDateDifference(startDate, endDate) {
+        let months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
+        months -= startDate.getMonth();
+        months += endDate.getMonth();
+
+        const years = Math.floor(months / 12);
+        const remainingMonths = months % 12;
+
+        // Get active language
+        const activeLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
+
+        if (activeLang === 'es') {
+            let result = '';
+            if (years > 0) {
+                result += `${years} año${years !== 1 ? 's' : ''} `;
             }
+            if (remainingMonths > 0) {
+                result += `${remainingMonths} mes${remainingMonths !== 1 ? 'es' : ''}`;
+            }
+            return result.trim();
+        } else {
+            let result = '';
+            if (years > 0) {
+                result += `${years} yr${years !== 1 ? 's' : ''} `;
+            }
+            if (remainingMonths > 0) {
+                result += `${remainingMonths} mo${remainingMonths !== 1 ? 's' : ''}`;
+            }
+            return result.trim();
+        }
+    }
+
+    // Calculate experience durations on page load
+    calculateExperienceDurations();
+
+    // PDF Export functionality
+    const downloadPdfBtn = document.getElementById('download-pdf');
+    if (downloadPdfBtn) {
+        downloadPdfBtn.addEventListener('click', function () {
+            const element = document.getElementById('resume-content');
+            const opt = {
+                margin: 10,
+                filename: 'Farid_Maloof_CV.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Show loading state
+            downloadPdfBtn.disabled = true;
+            const originalContent = downloadPdfBtn.innerHTML;
+            const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
+            downloadPdfBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${currentLang === 'es' ? 'Generando PDF...' : 'Generating PDF...'
+                }`;
+
+            // Show all content before generating PDF
+            const hiddenContents = document.querySelectorAll('.hidden-content');
+            hiddenContents.forEach(el => {
+                el.style.display = 'block';
+            });
+
+            // Generate PDF
+            html2pdf().from(element).set(opt).save().then(() => {
+                // Restore original state
+                downloadPdfBtn.innerHTML = originalContent;
+                downloadPdfBtn.disabled = false;
+
+                // Hide content again if it was hidden before
+                hiddenContents.forEach(el => {
+                    const button = el.previousElementSibling?.querySelector('.show-more-btn');
+                    if (button && !button.classList.contains('active')) {
+                        el.style.display = 'none';
+                    }
+                });
+            });
         });
-    });
-});
+    }
 
-// Función para calcular y mostrar la duración de la experiencia
-function calculateExperienceDurations() {
-    const experienceItems = document.querySelectorAll('.experience-item');
+    // Animation for skill bars
+    const skillItems = document.querySelectorAll('.skill-item');
 
-    experienceItems.forEach(item => {
-        const dateElement = item.querySelector('.date');
-        if (!dateElement) return;
+    function animateSkillBars() {
+        skillItems.forEach(item => {
+            const level = item.getAttribute('data-level');
+            const bar = item.querySelector('.skill-level');
+            bar.style.width = '0';
 
-        const dateText = dateElement.textContent;
-        if (!dateText.includes('Present')) return;
+            // Animate after a short delay
+            setTimeout(() => {
+                bar.style.width = level + '%';
+            }, 100);
+        });
+    }
 
-        // Extraer fechas del texto
-        const dateParts = dateText.split('·')[0].trim().split(' - ');
-        const startDateStr = dateParts[0];
-        const endDateStr = dateParts[1].includes('Present') ? new Date() : dateParts[1];
-
-        // Convertir a objetos Date
-        const startDate = parseDate(startDateStr);
-        const endDate = endDateStr instanceof Date ? endDateStr : parseDate(endDateStr);
-
-        // Calcular diferencia
-        const duration = calculateDateDifference(startDate, endDate);
-
-        // Actualizar el texto
-        const newText = dateText.replace(/·.*/, ` · ${duration}`);
-        dateElement.textContent = newText;
-    });
-}
-
-// Función para parsear fechas en formato "MMM YYYY" (ej. "Jun 2023")
-function parseDate(dateStr) {
-    if (dateStr === 'Present' || dateStr === 'Presente') return new Date();
-
-    const months = {
-        'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
-        'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11,
-        'Ene': 0, 'Feb': 1, 'Mar': 2, 'Abr': 3, 'May': 4, 'Jun': 5,
-        'Jul': 6, 'Ago': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dic': 11
+    // Intersection Observer for skill bar animations
+    const observerOptions = {
+        threshold: 0.1
     };
 
-    const parts = dateStr.split(' ');
-    const month = months[parts[0]];
-    const year = parseInt(parts[1]);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateSkillBars();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-    return new Date(year, month, 1);
-}
-
-// Función para calcular diferencia entre fechas en formato "X años Y meses"
-function calculateDateDifference(startDate, endDate) {
-    let months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
-    months -= startDate.getMonth();
-    months += endDate.getMonth();
-
-    const years = Math.floor(months / 12);
-    const remainingMonths = months % 12;
-
-    // Obtener el idioma activo
-    const activeLang = document.querySelector('.lang-btn.active').getAttribute('data-lang');
-
-    if (activeLang === 'es') {
-        return `${years > 0 ? `${years} año${years !== 1 ? 's' : ''} ` : ''}${remainingMonths} mes${remainingMonths !== 1 ? 'es' : ''}`.trim();
-    } else {
-        return `${years > 0 ? `${years} yr${years !== 1 ? 's' : ''} ` : ''}${remainingMonths} mo${remainingMonths !== 1 ? 's' : ''}`.trim();
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+        observer.observe(skillsSection);
     }
-}
-
-// Llamar a la función cuando el DOM esté listo y al cambiar de idioma
-document.addEventListener('DOMContentLoaded', calculateExperienceDurations);
-
-// También recalcular al cambiar idioma
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', calculateExperienceDurations);
 });

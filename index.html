@@ -6,602 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farid Maloof | Ingeniero de Desarrollo & QA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0a66c2;
-            --secondary: #2E4057;
-            --accent: #5DA5DA;
-            --light: #f5f7fa;
-            --dark: #333;
-            --text: #555;
-            --success: #06D6A0;
-            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Header Styles */
-        .header {
-            background: var(--gradient);
-            color: white;
-            padding: 2rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid white;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--box-shadow);
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .header h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            opacity: 0.9;
-        }
-
-        .language-selector {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .language-btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .language-btn:hover,
-        .language-btn.active {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* Social Icons */
-        .social-icons {
-            display: flex;
-            gap: 1.2rem;
-            margin: 1rem 0;
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: white;
-            color: var(--primary);
-            border-radius: 50%;
-            transition: var(--transition);
-            text-decoration: none;
-            box-shadow: var(--box-shadow);
-        }
-
-        .social-icons a:hover {
-            transform: translateY(-5px);
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Nav Styles */
-        .nav-container {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 70%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--secondary);
-            cursor: pointer;
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 3rem 0;
-        }
-
-        .section {
-            background: white;
-            border-radius: 8px;
-            box-shadow: var(--box-shadow);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .section-title {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent);
-            position: relative;
-        }
-
-        .section-title::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100px;
-            height: 2px;
-            background: var(--primary);
-        }
-
-        /* About Section */
-        .about p {
-            text-align: justify;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-category h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-tag {
-            background: var(--light);
-            color: var(--secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            border: 1px solid var(--accent);
-        }
-
-        .skill-tag:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: var(--accent);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -35px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 3px solid var(--light);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-company {
-            color: var(--secondary);
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-
-        .timeline-role {
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-date {
-            color: var(--text);
-            font-size: 0.9rem;
-            background: var(--light);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-description {
-            margin-top: 0.8rem;
-        }
-
-        .timeline-description li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .timeline-description li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-
-        /* Education Section */
-        .education-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .education-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .education-institution {
-            font-weight: 600;
-            color: var(--secondary);
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .education-degree {
-            color: var(--primary);
-            margin-bottom: 0.3rem;
-        }
-
-        .education-date {
-            font-size: 0.9rem;
-            color: var(--text);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .contact-text a {
-            color: var(--text);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .contact-text a:hover {
-            color: var(--primary);
-        }
-
-        /* Form Styles */
-        .contact-form {
-            margin-top: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-group label {
-            position: absolute;
-            left: 1rem;
-            top: 1rem;
-            color: var(--text-light);
-            transition: var(--transition);
-            pointer-events: none;
-            background-color: white;
-            padding: 0 0.3rem;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
-        }
-
-        .form-group input:focus+label,
-        .form-group textarea:focus+label,
-        .form-group input:not(:placeholder-shown)+label,
-        .form-group textarea:not(:placeholder-shown)+label {
-            top: -0.6rem;
-            font-size: 0.8rem;
-            color: var(--primary);
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--secondary);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer p {
-            opacity: 0.8;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .header h2 {
-                font-size: 1.2rem;
-            }
-
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-header {
-                flex-direction: column;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background: white;
-                padding: 1rem;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-
-        /* Language specific content */
-        [lang="es"] .en-content {
-            display: none;
-        }
-
-        [lang="en"] .es-content {
-            display: none;
-        }
-
-        /* Additional animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section {
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        .section:nth-child(2) {
-            animation-delay: 0.1s;
-        }
-
-        .section:nth-child(3) {
-            animation-delay: 0.2s;
-        }
-
-        .section:nth-child(4) {
-            animation-delay: 0.3s;
-        }
-
-        .section:nth-child(5) {
-            animation-delay: 0.4s;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body lang="es">
     <!-- Header Section -->
     <header class="header">
-        <div class="language-selector">
-            <button class="language-btn active" data-lang="es">ES</button>
-            <button class="language-btn" data-lang="en">EN</button>
-        </div>
         <div class="container">
+            <div class="header-actions">
+                <div class="language-selector">
+                    <button class="language-btn active" data-lang="es">ES</button>
+                    <button class="language-btn" data-lang="en">EN</button>
+                </div>
+                <button id="download-pdf" class="download-btn">
+                    <i class="fas fa-file-pdf"></i>
+                    <span class="es-content">Descargar PDF</span>
+                    <span class="en-content">Download PDF</span>
+                </button>
+            </div>
             <div class="header-content">
                 <img src="https://media.licdn.com/dms/image/D4E03AQH0h8Y4Ql8g2w/profile-displayphoto-shrink_400_400/0/1685576133281?e=1721260800&v=beta&t=W0h8f5K5n3DgWQl3u9eWz1q3Z9X9Qe0Q9X9Qe0Q9X9Q"
                     alt="Farid Maloof" class="profile-img">
@@ -624,133 +47,150 @@
         </div>
     </header>
 
-    <!-- Navigation -->
-    <div class="nav-container">
-        <div class="container">
-            <nav class="navbar">
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links">
-                    <li><a href="#about" class="es-content">Sobre mí</a><a href="#about" class="en-content">About me</a>
-                    </li>
-                    <li><a href="#skills" class="es-content">Habilidades</a><a href="#skills"
-                            class="en-content">Skills</a></li>
-                    <li><a href="#experience" class="es-content">Experiencia</a><a href="#experience"
-                            class="en-content">Experience</a></li>
-                    <li><a href="#education" class="es-content">Educación</a><a href="#education"
-                            class="en-content">Education</a></li>
-                    <li><a href="#contact" class="es-content">Contacto</a><a href="#contact"
-                            class="en-content">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content" id="resume-content">
         <div class="container">
             <!-- About Section -->
             <section id="about" class="section about">
                 <h2 class="section-title es-content">Sobre mí</h2>
                 <h2 class="section-title en-content">About Me</h2>
-
                 <div class="es-content">
-                    <p>Como profesional entusiasta de la tecnología, me he especializado en liderar proyectos de
-                        software y tecnología de la información en diversos sectores como petróleo y gas, finanzas y
-                        desarrollo de software. Con más de 10 años de experiencia en el campo, he desarrollado
-                        habilidades de liderazgo, coordinación de equipos y gestión de proyectos, lo que me permite
-                        ofrecer soluciones efectivas y creativas a los desafíos empresariales.</p>
-
-                    <p>Mi experiencia en liderar actividades de control de calidad y desarrollo me ha proporcionado un
-                        profundo conocimiento de los procesos y técnicas necesarios para garantizar la calidad de los
-                        productos y servicios entregados. Siempre he trabajado con un enfoque centrado en el cliente y
-                        con un énfasis en la mejora continua, lo que ha resultado en altos niveles de satisfacción.</p>
-
-                    <p>Soy una persona proactiva con mentalidad orientada a resultados y habilidades demostradas para
-                        trabajar en equipos y adaptarme a diferentes entornos. Me apasiona el aprendizaje continuo y
-                        mantenerme actualizado sobre las últimas tendencias y tecnologías en mi campo.</p>
+                    <p>Profesional con más de 10 años de experiencia en desarrollo de software y control de calidad,
+                        especializado en automatización de pruebas y metodologías ágiles. Certificado como Scrum Master
+                        Professional y con amplios conocimientos en tecnologías como Java, .NET, SQL y Power BI.</p>
+                    <p>Apasionado por la innovación tecnológica y el aprendizaje continuo, con experiencia liderando
+                        equipos multidisciplinarios en diversos sectores como fintech, energía y telecomunicaciones.</p>
                 </div>
-
                 <div class="en-content">
-                    <p>As an enthusiastic technology professional, I have specialized in leading software and
-                        information technology projects across various sectors including oil & gas, finance, and
-                        software development. With over 10 years of experience in the field, I have developed leadership
-                        skills, team coordination, and project management abilities that allow me to offer effective and
-                        creative solutions to business challenges.</p>
-
-                    <p>My experience in leading quality control and development activities has provided me with deep
-                        knowledge of the processes and techniques necessary to ensure the quality of delivered products
-                        and services. I have always worked with a customer-centric approach and with an emphasis on
-                        continuous improvement, which has resulted in high levels of satisfaction.</p>
-
-                    <p>I am a proactive person with a results-oriented mindset and demonstrated skills for working in
-                        teams and adapting to different environments. I am passionate about continuous learning and
-                        staying updated on the latest trends and technologies in my field.</p>
+                    <p>Professional with over 10 years of experience in software development and quality assurance,
+                        specialized in test automation and agile methodologies. Certified as Scrum Master Professional
+                        with extensive knowledge in technologies like Java, .NET, SQL and Power BI.</p>
+                    <p>Passionate about technological innovation and continuous learning, with experience leading
+                        multidisciplinary teams in various sectors including fintech, energy and telecommunications.</p>
                 </div>
             </section>
 
             <!-- Skills Section -->
             <section id="skills" class="section">
-                <h2 class="section-title es-content">Habilidades</h2>
-                <h2 class="section-title en-content">Skills</h2>
+                <h2 class="section-title es-content">Habilidades Principales</h2>
+                <h2 class="section-title en-content">Key Skills</h2>
 
                 <div class="skills-container">
                     <div class="skill-category">
-                        <h3 class="es-content">Habilidades Técnicas</h3>
-                        <h3 class="en-content">Technical Skills</h3>
+                        <h3 class="es-content">Tecnologías</h3>
+                        <h3 class="en-content">Technologies</h3>
                         <div class="skill-list">
-                            <span class="skill-tag">QA Automation</span>
-                            <span class="skill-tag">Test Planning</span>
-                            <span class="skill-tag">Software Testing</span>
-                            <span class="skill-tag">Bug Tracking</span>
-                            <span class="skill-tag">Performance Testing</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">Spring Boot</span>
-                            <span class="skill-tag">C#</span>
-                            <span class="skill-tag">VB.NET</span>
-                            <span class="skill-tag">ASP.NET Core</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Power BI</span>
+                            <div class="skill-item" data-level="90">
+                                <span class="skill-name">Java</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="85">
+                                <span class="skill-name">C# / .NET</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="80">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="75">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="skill-category">
-                        <h3 class="es-content">Metodologías</h3>
-                        <h3 class="en-content">Methodologies</h3>
+                        <h3 class="es-content">Bases de Datos</h3>
+                        <h3 class="en-content">Databases</h3>
                         <div class="skill-list">
-                            <span class="skill-tag">Agile Methodologies</span>
-                            <span class="skill-tag">Scrum</span>
-                            <span class="skill-tag">PMI Standards</span>
-                            <span class="skill-tag">Continuous Improvement</span>
-                            <span class="skill-tag">DevOps Practices</span>
+                            <div class="skill-item" data-level="85">
+                                <span class="skill-name">SQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="80">
+                                <span class="skill-name">MySQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-level="75">
+                                <span class="skill-name">Oracle</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <h3 class="es-content">Herramientas</h3>
-                        <h3 class="en-content">Tools</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">AWS (EC2, RDS)</span>
-                            <span class="skill-tag">Visual Studio</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">Oracle</span>
-                            <span class="skill-tag">SQL Server</span>
-                            <span class="skill-tag">ACL</span>
-                            <span class="skill-tag">Excel</span>
-                            <span class="skill-tag">JIRA</span>
-                        </div>
-                    </div>
+                <div class="show-more-container">
+                    <button id="show-more-skills" class="show-more-btn">
+                        <span class="es-content">Mostrar más habilidades</span>
+                        <span class="en-content">Show more skills</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
 
-                    <div class="skill-category">
-                        <h3 class="es-content">Idiomas</h3>
-                        <h3 class="en-content">Languages</h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">Español (Nativo)</span>
-                            <span class="skill-tag">Inglés (Profesional)</span>
+                <div id="more-skills" class="hidden-content">
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3 class="es-content">QA & Testing</h3>
+                            <h3 class="en-content">QA & Testing</h3>
+                            <div class="skill-list">
+                                <div class="skill-item" data-level="90">
+                                    <span class="skill-name">Selenium</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="85">
+                                    <span class="skill-name">Test Automation</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="80">
+                                    <span class="skill-name">JIRA</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="es-content">Metodologías</h3>
+                            <h3 class="en-content">Methodologies</h3>
+                            <div class="skill-list">
+                                <div class="skill-item" data-level="90">
+                                    <span class="skill-name">Scrum</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="85">
+                                    <span class="skill-name">Agile</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item" data-level="80">
+                                    <span class="skill-name">PMI</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-level" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -758,102 +198,155 @@
 
             <!-- Experience Section -->
             <section id="experience" class="section">
-                <h2 class="section-title es-content">Experiencia</h2>
-                <h2 class="section-title en-content">Experience</h2>
+                <h2 class="section-title es-content">Experiencia Profesional</h2>
+                <h2 class="section-title en-content">Professional Experience</h2>
 
                 <div class="timeline">
-                    <!-- Stori -->
+                    <!-- Most recent 3 experiences visible by default -->
                     <div class="timeline-item">
                         <div class="timeline-header">
                             <div class="timeline-company">Stori</div>
-                            <div class="timeline-date">Jun 2023 - Presente</div>
+                            <div class="timeline-date">Jun 2023 - Presente · <span class="duration">1 año 11
+                                    meses</span></div>
                         </div>
                         <div class="timeline-role es-content">Ingeniero QA</div>
                         <div class="timeline-role en-content">QA Engineer</div>
-                        <ul class="timeline-description es-content">
-                            <li>Desarrollo de planes y estrategias de pruebas</li>
-                            <li>Automatización de procedimientos de prueba de software</li>
-                            <li>Simulación y evaluación del rendimiento del producto</li>
-                            <li>Identificación y reporte de problemas utilizando sistemas de seguimiento</li>
-                            <li>Análisis de bases de datos de defectos conocidos para mejorar la calidad</li>
-                        </ul>
-                        <ul class="timeline-description en-content">
-                            <li>Develop test plans and testing strategies</li>
-                            <li>Automate software testing procedures</li>
-                            <li>Simulate product performance and evaluate results</li>
-                            <li>Identify and report issues using tracking systems</li>
-                            <li>Analyze known defect databases to improve product quality</li>
+                        <ul class="timeline-description">
+                            <li class="es-content">Desarrollé e implementé estrategias de automatización de pruebas que
+                                redujeron el tiempo de ejecución en un 40%</li>
+                            <li class="en-content">Developed and implemented test automation strategies that reduced
+                                execution time by 40%</li>
+                            <li class="es-content">Lideré el diseño de casos de prueba para nuevas funcionalidades del
+                                producto</li>
+                            <li class="en-content">Led test case design for new product features</li>
                         </ul>
                     </div>
 
-                    <!-- GMSTEK -->
                     <div class="timeline-item">
                         <div class="timeline-header">
                             <div class="timeline-company">GMSTEK, LLC</div>
-                            <div class="timeline-date">Jul 2022 - Jun 2023</div>
+                            <div class="timeline-date">Jul 2022 - Jun 2023 · <span class="duration">1 año</span></div>
                         </div>
                         <div class="timeline-role es-content">Desarrollador y Tester QA</div>
                         <div class="timeline-role en-content">Development & QA Tester</div>
-                        <ul class="timeline-description es-content">
-                            <li>Creación de planes de prueba detallados y estrategias de pruebas</li>
-                            <li>Ejecución y automatización de pruebas de software</li>
-                            <li>Evaluación del rendimiento del producto y análisis de resultados</li>
-                            <li>Documentación de problemas utilizando sistemas de seguimiento</li>
-                            <li>Optimización continua de estrategias de prueba con enfoque en automatización</li>
-                        </ul>
-                        <ul class="timeline-description en-content">
-                            <li>Create detailed test plans and testing strategies</li>
-                            <li>Execute software tests, including automation when possible</li>
-                            <li>Evaluate product performance and analyze results</li>
-                            <li>Document issues using bug tracking systems</li>
-                            <li>Continuously optimize testing strategies with a focus on automation</li>
+                        <ul class="timeline-description">
+                            <li class="es-content">Implementé frameworks de pruebas automatizadas utilizando Selenium y
+                                Python</li>
+                            <li class="en-content">Implemented automated test frameworks using Selenium and Python</li>
+                            <li class="es-content">Optimicé procesos de CI/CD integrando pruebas automatizadas</li>
+                            <li class="en-content">Optimized CI/CD processes by integrating automated tests</li>
                         </ul>
                     </div>
 
-                    <!-- COLSOF -->
                     <div class="timeline-item">
                         <div class="timeline-header">
                             <div class="timeline-company">COLSOF S.A.S</div>
-                            <div class="timeline-date">Ago 2021 - Jun 2022</div>
+                            <div class="timeline-date">Ago 2021 - Jun 2022 · <span class="duration">11 meses</span>
+                            </div>
                         </div>
                         <div class="timeline-role es-content">Ingeniero Especialista</div>
                         <div class="timeline-role en-content">Specialist Engineer</div>
-                        <ul class="timeline-description es-content">
-                            <li>Gestión de proyectos siguiendo estándares del PMI</li>
-                            <li>Aplicación de metodologías ágiles en desarrollo de proyectos</li>
-                            <li>Planificación y liderazgo efectivo de proyectos</li>
-                            <li>Generación de indicadores de gestión para evaluar el progreso</li>
-                            <li>Desarrollo de planes de innovación tecnológica</li>
-                        </ul>
-                        <ul class="timeline-description en-content">
-                            <li>Project management following PMI standards</li>
-                            <li>Application of agile methodologies in project development</li>
-                            <li>Effective project planning and leadership</li>
-                            <li>Generation of management indicators to evaluate progress</li>
-                            <li>Development of technological innovation plans</li>
+                        <ul class="timeline-description">
+                            <li class="es-content">Gestioné proyectos utilizando metodologías ágiles (Scrum, Kanban)
+                            </li>
+                            <li class="en-content">Managed projects using agile methodologies (Scrum, Kanban)</li>
+                            <li class="es-content">Implementé prácticas de DevOps que mejoraron la eficiencia del equipo
+                            </li>
+                            <li class="en-content">Implemented DevOps practices that improved team efficiency</li>
                         </ul>
                     </div>
+                </div>
 
-                    <!-- GreenSQA -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-company">GreenSQA S.A</div>
-                            <div class="timeline-date">Feb 2020 - Ago 2021</div>
+                <!-- Hidden experiences -->
+                <div id="more-experience" class="hidden-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <div class="timeline-company">GreenSQA S.A</div>
+                                <div class="timeline-date">Feb 2020 - Ago 2021 · <span class="duration">1 año 7
+                                        meses</span></div>
+                            </div>
+                            <div class="timeline-role es-content">Ingeniero de Pruebas</div>
+                            <div class="timeline-role en-content">Test Engineer</div>
+                            <ul class="timeline-description">
+                                <li class="es-content">Desarrollé scripts de automatización con Robot Framework</li>
+                                <li class="en-content">Developed automation scripts with Robot Framework</li>
+                                <li class="es-content">Implementé pruebas de rendimiento para aplicaciones web</li>
+                                <li class="en-content">Implemented performance testing for web applications</li>
+                            </ul>
                         </div>
-                        <div class="timeline-role es-content">Ingeniero de Pruebas de Software</div>
-                        <div class="timeline-role en-content">Software Test Engineer</div>
-                        <ul class="timeline-description es-content">
-                            <li>Planificación detallada y estimación de servicios</li>
-                            <li>Diseño, ejecución y retroalimentación de pruebas funcionales</li>
-                            <li>Desarrollo de robots para ejecución de pruebas</li>
-                            <li>Configuración de herramientas para prestación de servicios</li>
-                        </ul>
-                        <ul class="timeline-description en-content">
-                            <li>Detailed planning and service estimation</li>
-                            <li>Design, execution and feedback of functional tests</li>
-                            <li>Development of robots for test execution</li>
-                            <li>Configuration of tools for service provision</li>
-                        </ul>
+
+                        <!-- Additional experience items would go here -->
+                    </div>
+                </div>
+
+                <div class="show-more-container">
+                    <button id="show-more-exp" class="show-more-btn">
+                        <span class="es-content">Mostrar más experiencia</span>
+                        <span class="en-content">Show more experience</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications" class="section">
+                <h2 class="section-title es-content">Certificaciones</h2>
+                <h2 class="section-title en-content">Certifications</h2>
+
+                <div class="certifications-container">
+                    <div class="certification-item">
+                        <div class="certification-header">
+                            <div class="certification-title">Scrum Master Professional Certificate (SMPC®)</div>
+                            <div class="certification-date">May 2020</div>
+                        </div>
+                        <div class="certification-issuer">CertiProf</div>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-header">
+                            <div class="certification-title">Power BI: Desde cero. El curso más poderoso de 2021</div>
+                            <div class="certification-date">Jul 2021</div>
+                        </div>
+                        <div class="certification-issuer">Udemy</div>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-header">
+                            <div class="certification-title">SQL (Intermediate)</div>
+                            <div class="certification-date">Ene 2025</div>
+                        </div>
+                        <div class="certification-issuer">HackerRank</div>
+                    </div>
+                </div>
+
+                <div class="show-more-container">
+                    <button id="show-more-certs" class="show-more-btn">
+                        <span class="es-content">Mostrar más certificaciones</span>
+                        <span class="en-content">Show more certifications</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+
+                <div id="more-certifications" class="hidden-content">
+                    <div class="certifications-container">
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div class="certification-title">Master Web Api ASP NET Core 9</div>
+                                <div class="certification-date">Ene 2025</div>
+                            </div>
+                            <div class="certification-issuer">Udemy</div>
+                        </div>
+
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div class="certification-title">C# (Basic)</div>
+                                <div class="certification-date">Ene 2025</div>
+                            </div>
+                            <div class="certification-issuer">HackerRank</div>
+                        </div>
+
+                        <!-- Additional certifications would go here -->
                     </div>
                 </div>
             </section>
@@ -876,262 +369,11 @@
                     <div class="education-degree en-content">Systems Engineering</div>
                     <div class="education-date">Feb 2020 - Mar 2023</div>
                 </div>
-
-                <div class="education-item">
-                    <div class="education-institution">Universidad Autónoma de Occidente</div>
-                    <div class="education-degree es-content">Ingeniero Informático</div>
-                    <div class="education-degree en-content">Computer Engineer</div>
-                    <div class="education-date">2014 - 2017</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-institution">Universidad del Valle</div>
-                    <div class="education-degree es-content">Tecnología en Sistemas de Información</div>
-                    <div class="education-degree en-content">Information Systems Technology</div>
-                    <div class="education-date">2006 - 2010</div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="section">
-                <h2 class="section-title es-content">Contacto</h2>
-                <h2 class="section-title en-content">Contact</h2>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <span>Bogotá, Colombia</span>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <a href="mailto:faridmaloof@gmail.com">faridmaloof@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <a href="tel:+573002357202">+57 300 2357202</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </div>
-                        <div class="contact-text">
-                            <a href="https://www.linkedin.com/in/fmaloofs/" target="_blank">linkedin.com/in/fmaloofs</a>
-                        </div>
-                    </div>
-                </div>
-
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder=" " required>
-                        <label for="name" class="es-content">Tu Nombre</label>
-                        <label for="name" class="en-content">Your Name</label>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder=" " required>
-                        <label for="email" class="es-content">Tu Email</label>
-                        <label for="email" class="en-content">Your Email</label>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder=" " required>
-                        <label for="subject" class="es-content">Asunto</label>
-                        <label for="subject" class="en-content">Subject</label>
-                    </div>
-
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder=" " required></textarea>
-                        <label for="message" class="es-content">Tu Mensaje</label>
-                        <label for="message" class="en-content">Your Message</label>
-                    </div>
-
-                    <button type="submit" class="btn es-content">Enviar Mensaje</button>
-                    <button type="submit" class="btn en-content">Send Message</button>
-                </form>
             </section>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="es-content">&copy; 2024 Farid Maloof Suarez. Todos los derechos reservados.</p>
-            <p class="en-content">&copy; 2024 Farid Maloof Suarez. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Language switching functionality
-            const langButtons = document.querySelectorAll('.language-btn');
-
-            langButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    // Remove active class from all buttons
-                    langButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
-
-                    // Set language attribute on body
-                    document.body.setAttribute('lang', this.getAttribute('data-lang'));
-                });
-            });
-
-            // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-
-            if (mobileMenuBtn && navLinks) {
-                mobileMenuBtn.addEventListener('click', function () {
-                    navLinks.classList.toggle('active');
-                });
-            }
-
-            // Contact form submission
-            const contactForm = document.getElementById('contact-form');
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
-
-                    // Get form values
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-
-                    // Create email body
-                    const emailBody = `Nombre: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMensaje:%0D%0A${encodeURIComponent(message)}`;
-
-                    // Open default email client
-                    window.location.href = `mailto:faridmaloof@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
-
-                    // Show confirmation message
-                    const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
-
-                    if (currentLang === 'en') {
-                        alert(`Thank you, ${name}! Your message is ready to be sent. Please complete the sending process in your email client.`);
-                    } else {
-                        alert(`¡Gracias, ${name}! Tu mensaje está listo para enviarse. Por favor completa el proceso de envío en tu cliente de correo.`);
-                    }
-
-                    // Reset form
-                    contactForm.reset();
-                });
-            }
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-
-                    if (targetElement) {
-                        // Close mobile menu if open
-                        if (navLinks) {
-                            navLinks.classList.remove('active');
-                        }
-
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Calculate experience durations
-            function calculateExperienceDurations() {
-                const experienceItems = document.querySelectorAll('.timeline-item');
-
-                experienceItems.forEach(item => {
-                    const dateElement = item.querySelector('.timeline-date');
-                    if (!dateElement) return;
-
-                    const dateText = dateElement.textContent;
-                    if (!dateText.includes('Present')) return;
-
-                    // Extract dates from text
-                    const dateParts = dateText.split(' - ');
-                    const startDateStr = dateParts[0];
-                    const endDateStr = dateParts[1].includes('Present') ? new Date() : dateParts[1];
-
-                    // Convert to Date objects
-                    const startDate = parseDate(startDateStr);
-                    const endDate = endDateStr instanceof Date ? endDateStr : parseDate(endDateStr);
-
-                    // Calculate difference
-                    const duration = calculateDateDifference(startDate, endDate);
-
-                    // Update the text
-                    const newText = dateText.replace(/·.*/, ` · ${duration}`);
-                    dateElement.textContent = newText;
-                });
-            }
-
-            // Helper function to parse dates in "MMM YYYY" format (e.g., "Jun 2023")
-            function parseDate(dateStr) {
-                if (dateStr === 'Present' || dateStr === 'Presente') return new Date();
-
-                const months = {
-                    'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
-                    'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11,
-                    'Ene': 0, 'Feb': 1, 'Mar': 2, 'Abr': 3, 'May': 4, 'Jun': 5,
-                    'Jul': 6, 'Ago': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dic': 11
-                };
-
-                const parts = dateStr.split(' ');
-                const month = months[parts[0]];
-                const year = parseInt(parts[1]);
-
-                return new Date(year, month, 1);
-            }
-
-            // Helper function to calculate date difference in "X years Y months" format
-            function calculateDateDifference(startDate, endDate) {
-                let months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
-                months -= startDate.getMonth();
-                months += endDate.getMonth();
-
-                const years = Math.floor(months / 12);
-                const remainingMonths = months % 12;
-
-                // Get active language
-                const activeLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
-
-                if (activeLang === 'es') {
-                    return `${years > 0 ? `${years} año${years !== 1 ? 's' : ''} ` : ''}${remainingMonths} mes${remainingMonths !== 1 ? 'es' : ''}`.trim();
-                } else {
-                    return `${years > 0 ? `${years} yr${years !== 1 ? 's' : ''} ` : ''}${remainingMonths} mo${remainingMonths !== 1 ? 's' : ''}`.trim();
-                }
-            }
-
-            // Calculate experience durations on page load
-            calculateExperienceDurations();
-
-            // Recalculate when language changes
-            document.querySelectorAll('.language-btn').forEach(btn => {
-                btn.addEventListener('click', calculateExperienceDurations);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
