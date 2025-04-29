@@ -1,0 +1,1056 @@
+{
+    "personal_info": {
+        "picture": "https://media.licdn.com/dms/image/v2/C5603AQEkG4SjGIlSuA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516776243952?e=1751500800&v=beta&t=H1hITw71Yw6sZYTZ6JhysKwAnjBSTQaukbTtd7MJUs4",
+        "name": "Farid Maloof Suarez",
+        "title": "Development & QA Tester",
+        "location": "Bogotá, Distrito Capital, Colombia",
+        "contact": {
+            "phone": "+573002357202 (Mobile)",
+            "email": "faridmaloof@gmail.com",
+            "linkedin": "www.linkedin.com/in/fmaloofs",
+            "github": "https://github.com/faridmaloof",
+            "repo_git": "https://github.com/faridmaloof/my-resume"
+        },
+        "roles_targeted": [
+            "QA Automation Engineer",
+            "Software Developer",
+            "Product Manager"
+        ]
+    },
+    "summary": {
+        "es": "Profesional con más de 10 años de experiencia en desarrollo de software y control de calidad, especializado en automatización de pruebas y metodologías ágiles. Certificado como Scrum Master Professional y con amplios conocimientos en tecnologías como Java, .NET, SQL y Power BI. Apasionado por la innovación tecnológica y el aprendizaje continuo, con experiencia liderando equipos multidisciplinarios en diversos sectores como fintech, energía y telecomunicaciones.",
+        "en": "Enthusiastic technology professional specializing in leading software and IT projects across diverse sectors, including oil and gas, finance, and software development. With over 10 years of experience, I have cultivated expertise in leadership, team coordination, and project management, enabling me to deliver effective and innovative solutions to complex business challenges.  Passionate about quality assurance, continuous improvement, and staying at the cutting edge of industry trends and technologies."
+    },
+    "languages": {
+        "Español": "Native or Bilingual",
+        "Inglés": "Professional Working"
+    },
+    "skills": {
+        "lenguajes_programacion": [
+            "Java",
+            "C#",
+            ".NET",
+            "Python",
+            "JavaScript",
+            "ASP.NET Web API",
+            "PHP"
+        ],
+        "calidad_automatizacion": [
+            "Selenium WebDriver",
+            "API Testing",
+            "Test Automation",
+            "Unit Testing",
+            "Behavior Driven Development (BDD)",
+            "Process Automation",
+            "TestNG",
+            "JUnit"
+        ],
+        "gestion_proyectos_metodologias": [
+            "Agile",
+            "Scrum",
+            "Agile Coaching",
+            "DevOps",
+            "PMI",
+            "Kanban",
+            "JIRA",
+            "Spring Boot",
+            "Spring"
+        ],
+        "herramientas_tecnologias": [
+            "Power BI",
+            "Microsoft Excel",
+            "PowerPivot",
+            "AWS",
+            "Docker",
+            "Kubernetes",
+            "Jenkins",
+            "MySQL",
+            "Oracle",
+            "SQL Server",
+            "Microsoft Azure",
+            "Amazon RDS",
+            "Amazon EC2",
+            "Amazon API Gateway",
+            "Amazon DynamoDB"
+        ],
+        "practicas_tecnicas": [
+            "Data-Driven Testing",
+            "RESTful API Design",
+            "Continuous Integration",
+            "Continuous Delivery",
+            "Modelado de datos",
+            "Expresiones de análisis de datos (DAX)",
+            "Big Data"
+        ],
+        "soft_skills": [
+            "Trabajo en equipo",
+            "Comunicación efectiva",
+            "Pensamiento analítico",
+            "Adaptabilidad",
+            "Liderazgo técnico",
+            "Negociación",
+            "Orientación al cliente",
+            "Análisis de datos",
+            "Presentación de datos"
+        ]
+    },
+    "certifications": [
+        {
+            "title": {
+                "es": "Scrum esencial",
+                "en": "Scrum Essential"
+            },
+            "organization": "LinkedIn Learning Community",
+            "expiration": "feb. 2025",
+            "credential_id": "64ced7abb2ca94911189b77c6165b88ac332ae56030eb9440f56c60c73e0d343",
+            "skills": [
+                "Scrum"
+            ],
+            "credential_url": "https://www.linkedin.com/learning/certificates/64ced7abb2ca94911189b77c6165b88ac332ae56030eb9440f56c60c73e0d343?trk=share_certificate"
+        },
+        {
+            "title": {
+                "es": "C# (Básico)",
+                "en": "C# (Basic)"
+            },
+            "organization": "HackerRank",
+            "expiration": "ene. 2025",
+            "credential_id": "e63e7e1b9801",
+            "credential_url": "https://www.hackerrank.com/certificates/e63e7e1b9801"
+        },
+        {
+            "title": {
+                "es": "Master Web Api ASP NET Core 9",
+                "en": "Master Web Api ASP NET Core 9"
+            },
+            "organization": "Udemy",
+            "expiration": "ene. 2025",
+            "credential_id": "UC-af2e5b16-04fd-48f2-8db7-d86c75beaad7",
+            "skills": [
+                ".Net Core",
+                ".NET framework",
+                "ASP.NET Web API",
+                "C#"
+            ],
+            "credential_url": "https://www.udemy.com/certificate/UC-af2e5b16-04fd-48f2-8db7-d86c75beaad7/"
+        },
+        {
+            "title": {
+                "es": "SQL (Avanzado)",
+                "en": "SQL (Advanced)"
+            },
+            "organization": "HackerRank",
+            "expiration": "ene. 2025",
+            "credential_id": "af28df390c8e",
+            "credential_url": "https://www.hackerrank.com/certificates/af28df390c8e"
+        },
+        {
+            "title": {
+                "es": "SQL (Básico)",
+                "en": "SQL (Basic)"
+            },
+            "organization": "HackerRank",
+            "expiration": "ene. 2025",
+            "credential_id": "1d3e21690f3c",
+            "credential_url": "https://www.hackerrank.com/certificates/1d3e21690f3c"
+        },
+        {
+            "title": {
+                "es": "SQL (Intermedio)",
+                "en": "SQL (Intermediate)"
+            },
+            "organization": "HackerRank",
+            "expiration": "ene. 2025",
+            "credential_id": "36b6670ab003",
+            "credential_url": "https://www.hackerrank.com/certificates/36b6670ab003"
+        },
+        {
+            "title": {
+                "es": "Diplomado Internacional de Gerencia de Proyectos bajo lineamientos PMI",
+                "en": "International Diploma in Project Management under PMI guidelines"
+            },
+            "organization": "Asturias Corporación Universitaria",
+            "expiration": "sept. 2024",
+            "credential_url": "https://www.credly.com/badges/cc655127-b376-4c6e-b0fb-290c18d9bbdb"
+        },
+        {
+            "title": {
+                "es": "Experto en Gestión de Proyectos según PMI",
+                "en": "Project Management Expert according to PMI"
+            },
+            "organization": "Asturias Corporación Universitaria",
+            "expiration": "sept. 2024",
+            "credential_url": "https://www.credly.com/badges/512a9861-fd39-42b1-a295-f7ac42fe13df/linked_in_profile"
+        },
+        {
+            "title": {
+                "es": "API Testing in Python",
+                "en": "API Testing in Python"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "credential_id": "f549d15c",
+            "skills": [
+                "Unit Testing",
+                "Python",
+                "Test Automation",
+                "Test Automation Framework"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=f549d15c"
+        },
+        {
+            "title": {
+                "es": "Automated Visual Testing with Python",
+                "en": "Automated Visual Testing with Python"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "credential_id": "d46b1caa",
+            "skills": [
+                "Python",
+                "Test Automation",
+                "Test Automation Framework"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=d46b1caa"
+        },
+        {
+            "title": {
+                "es": "Behavior Driven Python with Python-bdd",
+                "en": "Behavior Driven Python with Python-bdd"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "credential_id": "bfcfa5d0",
+            "skills": [
+                "BDD",
+                "Python",
+                "Test Automation",
+                "Test Automation Framework"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=bfcfa5d0"
+        },
+        {
+            "title": {
+                "es": "Intro to Testing Machine Learning Models",
+                "en": "Intro to Testing Machine Learning Models"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "credential_id": "7fd1b3d2",
+            "skills": [
+                "Python",
+                "Test Automation",
+                "Test Automation Framework"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=7fd1b3d2"
+        },
+        {
+            "title": {
+                "es": "Introduction to Microservices [2024]",
+                "en": "Introduction to Microservices [2024]"
+            },
+            "organization": "Udemy",
+            "expiration": "feb. 2024",
+            "credential_id": "UC-f5b34626-0598-4bd7-9e9b-277a3bb307de",
+            "skills": [
+                "Microservices"
+            ],
+            "credential_url": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-f5b34626-0598-4bd7-9e9b-277a3bb307de.pdf"
+        },
+        {
+            "title": {
+                "es": "Introduction to Robot Framework",
+                "en": "Introduction to Robot Framework"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "credential_id": "1358b864",
+            "skills": [
+                "Python",
+                "Robot Framework"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=1358b864"
+        },
+        {
+            "title": {
+                "es": "Introduction to pytest",
+                "en": "Introduction to pytest"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "credential_id": "d1a4409c",
+            "skills": [
+                "Python",
+                "Pytest"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=d1a4409c"
+        },
+        {
+            "title": {
+                "es": "Python Programming",
+                "en": "Python Programming"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "credential_id": "1eb75496",
+            "skills": [
+                "Python (Programming Language)"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=1eb75496"
+        },
+        {
+            "title": {
+                "es": "Selenium WebDriver with Python",
+                "en": "Selenium WebDriver with Python"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "credential_id": "e78559c8",
+            "skills": [
+                "Python",
+                "Selenium WebDriver",
+                "WebDriver"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=e78559c8"
+        },
+        {
+            "title": {
+                "es": "Setting a Foundation for Successful Test Automation",
+                "en": "Setting a Foundation for Successful Test Automation"
+            },
+            "organization": "Applitools",
+            "expiration": "feb. 2024",
+            "skills": [
+                "Test Automation"
+            ],
+            "credential_url": "https://testautomationu.applitools.com/certificate/?id=17345a09"
+        },
+        {
+            "title": {
+                "es": "Diplomado Internacional de Gerencia de Proyectos bajo lineamientos PMI",
+                "en": "International Diploma in Project Management under PMI guidelines"
+            },
+            "organization": "Asturias Corporación Universitaria",
+            "expiration": "sept. 2024"
+        },
+        {
+            "title": {
+                "es": "Introducción a la Investigación en el Mundo de los Negocios",
+                "en": "Introduction to Research in the World of Business"
+            },
+            "organization": "Asturias Corporación Universitaria",
+            "expiration": "oct. 2023",
+            "credential_id": "36166"
+        },
+        {
+            "title": {
+                "es": "Complete guide to building an app with .Net Core and React",
+                "en": "Complete guide to building an app with .Net Core and React"
+            },
+            "organization": "Udemy",
+            "expiration": "sept. 2023",
+            "skills": [
+                "React.js",
+                ".Net Core",
+                ".NET framework",
+                "React Native"
+            ]
+        },
+        {
+            "title": {
+                "es": "Micro Focus UFT One 2021 - Basic to Advance level 2023",
+                "en": "Micro Focus UFT One 2021 - Basic to Advance level 2023"
+            },
+            "organization": "Udemy",
+            "expiration": "sept. 2023",
+            "skills": [
+                "Micro Focus"
+            ]
+        },
+        {
+            "title": {
+                "es": "Ethical Hacking: Introduction to Exploits",
+                "en": "Ethical Hacking: Introduction to Exploits"
+            },
+            "organization": "Udemy",
+            "expiration": "abr. 2023",
+            "credential_id": "UC-80b3c3f9-c58f-435b-ac59-daac3d398925/",
+            "skills": [
+                "Hacking ético",
+                "Linux",
+                "Ethical Hacking"
+            ]
+        },
+        {
+            "title": {
+                "es": "SEMINARIO INTELIGENCIA ARTIFICIAL Y BIG DATA APLICADA A LOS NEGOCIOS",
+                "en": "SEMINAR ARTIFICIAL INTELLIGENCE AND BIG DATA APPLIED TO BUSINESS"
+            },
+            "organization": "Uniremington",
+            "expiration": "ene. 2023",
+            "skills": [
+                "Big data",
+                "Análisis de Big Data",
+                "Inteligencia artificial"
+            ]
+        },
+        {
+            "title": {
+                "es": "Power BI DAX: Aprende las funciones más avanzadas",
+                "en": "Power BI DAX: Learn the most advanced functions"
+            },
+            "organization": "Udemy",
+            "expiration": "may. 2022",
+            "credential_id": "UC-a69ea511-4b82-4074-a074-e87bb9a90ef7",
+            "skills": [
+                "Power bi",
+                "Microsoft Power BI",
+                "Expresiones de análisis de datos (DAX)"
+            ]
+        },
+        {
+            "title": {
+                "es": "Aprende en 2022 RÁPIDAMENTE   Power BI en Español",
+                "en": "Learn in 2022 QUICKLY Power BI in Spanish"
+            },
+            "organization": "Udemy",
+            "expiration": "may. 2022",
+            "credential_id": "UC-c8ccb15c-64da-4504-a42f-d4e70b8ffe05",
+            "skills": [
+                "Power bi",
+                "Microsoft Power BI"
+            ]
+        },
+        {
+            "title": {
+                "es": "Cloud Computing",
+                "en": "Cloud Computing"
+            },
+            "organization": "Google Actívate",
+            "expiration": "may. 2022",
+            "credential_id": "G2U UZ6 GKB",
+            "skills": [
+                "Computación en la nube"
+            ]
+        },
+        {
+            "title": {
+                "es": "Curso Excel y Power BI – Análisis y Visualización de Datos",
+                "en": "Excel and Power BI Course – Data Analysis and Visualization"
+            },
+            "organization": "Udemy",
+            "expiration": "may. 2022",
+            "credential_id": "UC-29ff2d1b-3377-4571-8e41-3262740eade2",
+            "skills": [
+                "Power bi",
+                "Microsoft Excel",
+                "Microsoft Power BI",
+                "Análisis de datos",
+                "Presentación de datos",
+                "Bases de datos"
+            ]
+        },
+        {
+            "title": {
+                "es": "Digitaliza paso a paso tu negocio con herramientas de Google",
+                "en": "Digitize your business step by step with Google tools"
+            },
+            "organization": "Google Actívate",
+            "expiration": "may. 2022"
+        },
+        {
+            "title": {
+                "es": "EF SET English Certificate 36/100 (A2 Elementary)",
+                "en": "EF SET English Certificate 36/100 (A2 Elementary)"
+            },
+            "organization": "EF SET",
+            "expiration": "may. 2022",
+            "credential_id": "p8U6PC"
+        },
+        {
+            "title": {
+                "es": "Gerencia de Proyectos para todos con Metodología PMI 2022",
+                "en": "Project Management for all with PMI Methodology 2022"
+            },
+            "organization": "Udemy",
+            "expiration": "may. 2022",
+            "credential_id": "UC-ba4a7195-a265-49ba-a364-83b0e30bc6e2",
+            "skills": [
+                "Oficina de gestión de proyectos (PMO)",
+                "Gestión de proyectos TIC"
+            ]
+        },
+        {
+            "title": {
+                "es": "Learn Power BI Fast",
+                "en": "Learn Power BI Fast"
+            },
+            "organization": "Udemy",
+            "expiration": "may. 2022",
+            "skills": [
+                "Power bi",
+                "Microsoft Power BI"
+            ]
+        },
+        {
+            "title": {
+                "es": "Microsoft Power BI: Visualización y Análisis Exploratorio",
+                "en": "Microsoft Power BI: Visualization and Exploratory Analysis"
+            },
+            "organization": "Udemy",
+            "expiration": "may. 2022",
+            "credential_id": "UC-9e4f8370-a5c2-4d3a-8460-5ae984d67253",
+            "skills": [
+                "Visualización de datos",
+                "Microsoft Power BI",
+                "Análisis exploratorio de datos"
+            ]
+        },
+        {
+            "title": {
+                "es": "Modela Datos en MS EXCEL con POWER PIVOT!",
+                "en": "Model Data in MS EXCEL with POWER PIVOT!"
+            },
+            "organization": "Udemy",
+            "expiration": "may. 2022",
+            "credential_id": "UC-fcd5ab2b-b0d3-4fe8-ba6b-d047bb872dff",
+            "skills": [
+                "Macros en Microsoft Excel",
+                "Modelado de datos",
+                "PowerPivot",
+                "Bases de datos"
+            ]
+        },
+        {
+            "title": {
+                "es": "Power BI: Inicia en el mundo del análisis de datos",
+                "en": "Power BI: Get started in the world of data analysis"
+            },
+            "organization": "Udemy",
+            "expiration": "may. 2022",
+            "credential_id": "UC-4e8be1c9-7d43-4401-90d6-4ccdd0771054",
+            "skills": [
+                "Bases de datos"
+            ]
+        },
+        {
+            "title": {
+                "es": "Desarrollo de Apps Móviles",
+                "en": "Mobile App Development"
+            },
+            "organization": "Google Actívate",
+            "expiration": "abr. 2022"
+        },
+        {
+            "title": {
+                "es": "Comienza a conocer sobre Bases de Datos y SQL! INTENSIVO",
+                "en": "Start learning about Databases and SQL! INTENSIVE"
+            },
+            "organization": "Udemy",
+            "expiration": "mar. 2022",
+            "skills": [
+                "Bases de datos"
+            ]
+        },
+        {
+            "title": {
+                "es": "Learn Microsoft Excel from A-Z: Beginner To Expert Course",
+                "en": "Learn Microsoft Excel from A-Z: Beginner To Expert Course"
+            },
+            "organization": "Udemy",
+            "expiration": "mar. 2022"
+        },
+        {
+            "title": {
+                "es": "Agile Coach Professional Certificate (ACPC) - (Spanish)",
+                "en": "Agile Coach Professional Certificate (ACPC) - (Spanish)"
+            },
+            "organization": "CertiProf",
+            "expiration": "nov. 2021",
+            "skills": [
+                "Metodologías ágiles",
+                "Agile coaching"
+            ]
+        },
+        {
+            "title": {
+                "es": "Certificado Profesional de la Fundación Scrum (SFPC)",
+                "en": "Scrum Foundation Professional Certificate (SFPC)"
+            },
+            "organization": "CertiProf",
+            "expiration": "oct. 2021",
+            "credential_id": "70786221",
+            "skills": [
+                "Scrum",
+                "Metodologías ágiles"
+            ]
+        },
+        {
+            "title": {
+                "es": "UBUNTU Linux Server",
+                "en": "UBUNTU Linux Server"
+            },
+            "organization": "Udemy",
+            "expiration": "ago. 2021"
+        },
+        {
+            "title": {
+                "es": "INGLES BASICO - NIVEL 2",
+                "en": "BASIC ENGLISH - LEVEL 2"
+            },
+            "organization": "Servicio Nacional de Aprendizaje (SENA)",
+            "expiration": "jul. 2021",
+            "credential_id": "9227002325682CC1130598321C"
+        },
+        {
+            "title": {
+                "es": "Aprende a programar ¡en cualquier lenguaje!",
+                "en": "Learn to program in any language!"
+            },
+            "organization": "LinkedIn",
+            "expiration": "may. 2021"
+        },
+        {
+            "title": {
+                "es": "Arquitectura de software: Diseño de sistemas de software esencial",
+                "en": "Software Architecture: Designing essential software systems"
+            },
+            "organization": "LinkedIn",
+            "expiration": "may. 2021"
+        },
+        {
+            "title": {
+                "es": "Become a Test Automation Engineer",
+                "en": "Become a Test Automation Engineer"
+            },
+            "organization": "LinkedIn",
+            "expiration": "may. 2021"
+        },
+        {
+            "title": {
+                "es": "INGLES BASICO - NIVEL 1",
+                "en": "BASIC ENGLISH - LEVEL 1"
+            },
+            "organization": "Servicio Nacional de Aprendizaje (SENA)",
+            "expiration": "may. 2021",
+            "credential_id": "9227002272907CC1130598321C"
+        },
+        {
+            "title": {
+                "es": "Robot Framework Test Automation: Level 1 (Selenium)",
+                "en": "Robot Framework Test Automation: Level 1 (Selenium)"
+            },
+            "organization": "LinkedIn",
+            "expiration": "may. 2021"
+        },
+        {
+            "title": {
+                "es": "Succeeding in DevOps",
+                "en": "Succeeding in DevOps"
+            },
+            "organization": "LinkedIn",
+            "expiration": "may. 2021"
+        },
+        {
+            "title": {
+                "es": "Arquitectura de software: Creación de sistemas sustentables esencial",
+                "en": "Software Architecture: Creating Sustainable Systems Essential"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "Building Web APIs with ASP.NET Core",
+                "en": "Building Web APIs with ASP.NET Core"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021",
+            "credential_id": "AennkJPnTDs23ft-ZiiWfp3GehTV"
+        },
+        {
+            "title": {
+                "es": "DevOps Foundations: Lean and Agile",
+                "en": "DevOps Foundations: Lean and Agile"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "Learning Selenium",
+                "en": "Learning Selenium"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "Microservicios con un café",
+                "en": "Microservices with a coffee"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "Project: Gestión de proyectos ágiles",
+                "en": "Project: Agile Project Management"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "Scrum avanzado",
+                "en": "Advanced Scrum"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "Software Testing Foundations: Continuous Testing and DevOps",
+                "en": "Software Testing Foundations: Continuous Testing and DevOps"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "Test Automation Foundations",
+                "en": "Test Automation Foundations"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "Scripting for Testers",
+                "en": "Scripting for Testers"
+            },
+            "organization": "LinkedIn",
+            "expiration": "abr. 2021"
+        },
+        {
+            "title": {
+                "es": "API Design and Fundamentals of Google Cloud's Apigee API Platform",
+                "en": "API Design and Fundamentals of Google Cloud's Apigee API Platform"
+            },
+            "organization": "Coursera",
+            "expiration": "dic. 2020",
+            "credential_id": "477f1e17ccf4e8d6a7d6291e3d9758f8"
+        },
+        {
+            "title": {
+                "es": "Architecting with Google Kubernetes Engine:Foundations en Español",
+                "en": "Architecting with Google Kubernetes Engine:Foundations in Spanish"
+            },
+            "organization": "Coursera",
+            "expiration": "nov. 2020",
+            "credential_id": "DA2APL9V3A4L"
+        },
+        {
+            "title": {
+                "es": "Scrum Fundamentals Certified",
+                "en": "Scrum Fundamentals Certified"
+            },
+            "organization": "SCRUMstudy - Accreditation Body for Scrum and Agile",
+            "expiration": "nov. 2020",
+            "credential_id": "818672",
+            "skills": [
+                "Metodologías ágiles"
+            ]
+        },
+        {
+            "title": {
+                "es": "Data-Driven Testing (via Database) with Selenium & TestNG",
+                "en": "Data-Driven Testing (via Database) with Selenium & TestNG"
+            },
+            "organization": "Coursera",
+            "expiration": "oct. 2020",
+            "credential_id": "9G7VZY3TW94P"
+        },
+        {
+            "title": {
+                "es": "Scrum Foundation Professional Certificate (SFPC) - SP/EN",
+                "en": "Scrum Foundation Professional Certificate (SFPC) - SP/EN"
+            },
+            "organization": "CertiProf",
+            "expiration": "abr. 2020",
+            "credential_id": "71588096532719",
+            "skills": [
+                "Metodologías ágiles"
+            ]
+        },
+        {
+            "title": {
+                "es": "Windows Server 2019 - Go from Zero to Hero (2020)",
+                "en": "Windows Server 2019 - Go from Zero to Hero (2020)"
+            },
+            "organization": "Udemy Academy",
+            "expiration": "jun. 2020",
+            "credential_id": "UC-696db341-d9b4-4267-97b5-dae348c96b36"
+        },
+        {
+            "title": {
+                "es": "Agile Coach Professional Certificate",
+                "en": "Agile Coach Professional Certificate"
+            },
+            "organization": "CertiProf",
+            "expiration": "nov. 2021",
+            "skills": [
+                "Metodologías ágiles",
+                "Agile coaching"
+            ]
+        },
+        {
+            "title": {
+                "es": "Amazon API Gateway for Serverless Applications",
+                "en": "Amazon API Gateway for Serverless Applications"
+            },
+            "organization": "Amazon Web Services (AWS)",
+            "expiration": "sept. 2020",
+            "credential_id": "Et6ejQZYeEGLgWRjgMSH5w2"
+        },
+        {
+            "title": {
+                "es": "Amazon Aurora MySQL - Basics",
+                "en": "Amazon Aurora MySQL - Basics"
+            },
+            "organization": "Amazon Web Services (AWS)",
+            "expiration": "sept. 2020",
+            "credential_id": "gLFthSGh1keP_ZSZoCpIcQ2"
+        },
+        {
+            "title": {
+                "es": "Amazon DynamoDB – Architecture and Features",
+                "en": "Amazon DynamoDB – Architecture and Features"
+            },
+            "organization": "Amazon Web Services (AWS)",
+            "expiration": "sept. 2020",
+            "credential_id": "ctWi-cXRcEuGbYhhLJqszA2"
+        },
+        {
+            "title": {
+                "es": "Introduction to AWS Machine Learning Services",
+                "en": "Introduction to AWS Machine Learning Services"
+            },
+            "organization": "Amazon Web Services (AWS)",
+            "expiration": "sept. 2020",
+            "credential_id": "TKmXeSPm00OSnpzZurPuiw2"
+        },
+        {
+            "title": {
+                "es": "Introduction to AWS Machine Learning Services (Spanish)",
+                "en": "Introduction to AWS Machine Learning Services (Spanish)"
+            },
+            "organization": "Amazon Web Services (AWS)",
+            "expiration": "sept. 2020",
+            "credential_id": "wahmw97x0UipBlX88EiMQQ2"
+        },
+        {
+            "title": {
+                "es": "Introduction to Amazon API Gateway",
+                "en": "Introduction to Amazon API Gateway"
+            },
+            "organization": "Amazon Web Services (AWS)",
+            "expiration": "sept. 2020",
+            "credential_id": "qoNiqCtkrEuj_UAwQPcEdQ2"
+        },
+        {
+            "title": {
+                "es": "ML Building Blocks: Services and Terminology",
+                "en": "ML Building Blocks: Services and Terminology"
+            },
+            "organization": "Amazon Web Services (AWS)",
+            "expiration": "sept. 2020",
+            "credential_id": "bh1I8PDh3keqdTgiiq-Shg2"
+        },
+        {
+            "title": {
+                "es": "ML Building Blocks: Services and Terminology (Spanish)",
+                "en": "ML Building Blocks: Services and Terminology (Spanish)"
+            },
+            "organization": "Amazon Web Services (AWS)",
+            "expiration": "sept. 2020",
+            "credential_id": "KAf_nvvSYUqL8QaZf6nSHA2"
+        }
+    ],
+    "experience": [
+        {
+            "company": "Stori",
+            "title": {
+                "es": "Ingeniero QA",
+                "en": "QA Engineer"
+            },
+            "start_date": "junio de 2023",
+            "end_date": "Present",
+            "location": "México",
+            "responsibilities": {
+                "es": [
+                    "Desarrollar planes de prueba y estrategias de pruebas.",
+                    "Automatizar procedimientos de prueba de software.",
+                    "Simular el rendimiento del producto y evaluar los resultados.",
+                    "Identificar y reportar problemas utilizando sistemas de seguimiento de errores.",
+                    "Analizar bases de datos de defectos conocidos para mejorar la calidad del producto.",
+                    "Revisar las especificaciones del producto para anticipar posibles errores.",
+                    "Proporcionar aportes sobre el diseño del producto para minimizar futuros problemas.",
+                    "Mejorar continuamente las estrategias de prueba, con un enfoque en la automatización.",
+                    "Garantizar la calidad y funcionalidad del software para el público objetivo."
+                ],
+                "en": [
+                    "Develop test plans and test strategies.",
+                    "Automate software testing procedures.",
+                    "Simulate product performance and evaluate results.",
+                    "Identify and report issues using bug tracking systems.",
+                    "Analyze known defect databases to improve product quality.",
+                    "Review product specifications to anticipate potential errors.",
+                    "Provide input on product design to minimize future problems.",
+                    "Continuously improve testing strategies, with a focus on automation.",
+                    "Ensure the quality and functionality of the software for the target audience."
+                ]
+            }
+        },
+        {
+            "company": "GMSTEK, LLC",
+            "title": {
+                "es": "Desarrollador y Tester QA",
+                "en": "Development & QA Tester"
+            },
+            "start_date": "julio de 2022",
+            "end_date": "junio de 2023",
+            "location": "Palmetto Bay, Florida, Estados Unidos",
+            "responsibilities": {
+                "es": [
+                    "Crear planes de prueba detallados y estrategias de pruebas.",
+                    "Ejecutar pruebas de software, incluyendo automatización cuando sea posible.",
+                    "Evaluar el rendimiento del producto y analizar los resultados.",
+                    "Identificar y documentar problemas utilizando sistemas de seguimiento de errores.",
+                    "Mantener bases de datos actualizadas de defectos conocidos para mejorar el proceso de prueba.",
+                    "Revisar las especificaciones del producto para anticipar y abordar posibles errores.",
+                    "Ofrecer recomendaciones para el diseño del producto para evitar problemas futuros.",
+                    "Optimizar continuamente las estrategias de prueba, con un enfoque en la automatización.",
+                    "Garantizar la calidad y funcionalidad del software para satisfacer las necesidades del cliente."
+                ],
+                "en": [
+                    "Create detailed test plans and test strategies.",
+                    "Execute software tests, including automation when possible.",
+                    "Evaluate product performance and analyze results.",
+                    "Identify and document issues using bug tracking systems.",
+                    "Maintain updated databases of known defects to improve the testing process.",
+                    "Review product specifications to anticipate and address potential errors.",
+                    "Offer recommendations for product design to avoid future problems.",
+                    "Continuously optimize testing strategies, with a focus on automation.",
+                    "Ensure the quality and functionality of the software to meet client needs."
+                ]
+            }
+        },
+        {
+            "company": "COLSOF S.A.S",
+            "title": {
+                "es": "Ingeniero Especialista",
+                "en": "Specialist Engineer"
+            },
+            "start_date": "agosto de 2021",
+            "end_date": "junio de 2022",
+            "location": "Bogotá, Distrito Capital, Colombia",
+            "responsibilities": {
+                "es": [
+                    "Gestionar proyectos siguiendo los estándares del PMI.",
+                    "Aplicar metodologías ágiles en el desarrollo de proyectos.",
+                    "Gestionar eficientemente los recursos humanos asignados.",
+                    "Planificar y liderar proyectos de manera efectiva.",
+                    "Generar indicadores de gestión para evaluar el progreso del proyecto.",
+                    "Desarrollar planes de innovación tecnológica y proyectos de implementación.",
+                    "Organizar procesos administrativos y financieros relacionados con los proyectos.",
+                    "Implementar nuevas estrategias tecnológicas para mejorar la eficiencia.",
+                    "Desarrollar y ejecutar estrategias de negociación para la realización de proyectos.",
+                    "Gestionar eficazmente la infraestructura tecnológica."
+                ],
+                "en": [
+                    "Manage projects following PMI standards.",
+                    "Apply agile methodologies in project development.",
+                    "Efficiently manage allocated human resources.",
+                    "Plan and lead projects effectively.",
+                    "Generate management indicators to evaluate project progress.",
+                    "Develop technological innovation plans and implementation projects.",
+                    "Organize administrative and financial processes related to projects.",
+                    "Implement new technological strategies to improve efficiency.",
+                    "Develop and execute negotiation strategies for project execution.",
+                    "Manage technological infrastructure effectively."
+                ]
+            }
+        },
+        {
+            "company": "GreenSQA S.A",
+            "title": {
+                "es": "Profesional de Servicio Integral Junior",
+                "en": "Junior Integral Service Professional"
+            },
+            "start_date": "marzo de 2021",
+            "end_date": "agosto de 2021",
+            "location": "Cali, Valle del Cauca, Colombia",
+            "responsibilities": {
+                "es": [
+                    "Planificación detallada/estimación de los servicios comprometidos con el proyecto.",
+                    "Diseño, ejecución y retroalimentación de pruebas funcionales y no funcionales e inspecciones de código en cada proyecto.",
+                    "Utilizar técnicas de diseño de pruebas para maximizar la cobertura de pruebas y minimizar el esfuerzo requerido.",
+                    "Desarrollar robots necesarios para la ejecución de pruebas.",
+                    "Configurar las herramientas necesarias para la prestación de servicios.",
+                    "Identificar hardware y recursos necesarios para la ejecución del servicio.",
+                    "Ejecución manual o automatizada de pruebas de software.",
+                    "Reportar no conformidades del proyecto en herramientas definidas.",
+                    "Garantizar el cumplimiento de los procedimientos de planificación, diseño y ejecución de cada prueba de servicio incluida como parte del proyecto.",
+                    "Proporcionar retroalimentación objetiva al equipo del proyecto sobre el estado de las actividades asignadas.",
+                    "Proponer y utilizar herramientas para optimizar el esfuerzo requerido para las actividades de prueba asignadas.",
+                    "Contribuir a mejorar las metodologías de prueba de software.",
+                    "Almacenar la información del proyecto en repositorios definidos por la organización: colocar los proyectos de trabajo diseñados bajo niveles de control de configuración apropiados.",
+                    "Utilizar artefactos genéricos existentes en el repositorio para casos específicos en la toma de decisiones.",
+                    "Establecer amenazas del proyecto y realizar planes de continuidad para cada uno.",
+                    "Colocar los productos de trabajo diseñados bajo niveles de gestión de configuración apropiados.",
+                    "Identificar al gestor de configuración del proyecto.",
+                    "Conocer todos los medios relevantes de acceso a documentos durante la vida del proyecto.",
+                    "Garantizar que los recursos estén disponibles para llevar a cabo el proceso de gestión de la configuración en el proyecto.",
+                    "Proporcionar retroalimentación sobre el proceso de gestión de configuración basado en experiencias del proyecto."
+                ],
+                "en": [
+                    "Detailed planning/estimation of the services committed to the project.",
+                    "Design, execution, and feedback of functional and non-functional tests and code inspections in each project.",
+                    "Use test design techniques to maximize test coverage and minimize required effort.",
+                    "Develop necessary robots for test execution.",
+                    "Configure the tools needed to deliver services.",
+                    "Identify hardware and resources required for service execution.",
+                    "Perform manual or automated software testing.",
+                    "Report project non-conformities in defined tools.",
+                    "Ensure compliance with planning, design, and execution procedures for each service test included as part of the project.",
+                    "Provide objective feedback to the project team on the status of assigned activities.",
+                    "Propose and use tools to optimize the effort required for assigned testing activities.",
+                    "Contribute to improving software testing methodologies.",
+                    "Store project information in repositories defined by the organization: place work projects designed under appropriate configuration control levels.",
+                    "Use existing generic artifacts in the repository for specific cases in decision-making.",
+                    "Establish project threats and create continuity plans for each one.",
+                    "Place work products designed under appropriate configuration management levels.",
+                    "Identify the project configuration manager.",
+                    "Know all relevant means of accessing documents during the life of the project.",
+                    "Ensure that resources are available to carry out the configuration management process in the project.",
+                    "Provide feedback on the configuration management process based on project experiences."
+                ]
+            }
+        }
+    ],
+    "education": [
+        {
+            "institution": "Asturias Corporación Universitaria",
+            "degree_es": "Especialización en Gerencia de Proyectos",
+            "degree_en": "Specialization in Project Management",
+            "date": "Oct 2023 - Nov 2024"
+        },
+        {
+            "institution": "Uniremington",
+            "degree_es": "Ingeniería de Sistemas",
+            "degree_en": "Systems Engineering",
+            "date": "Feb 2020 - Mar 2023"
+        }
+    ]
+}

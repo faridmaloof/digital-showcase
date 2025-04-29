@@ -1,267 +1,475 @@
+// Global variable to store resume data
+let resumeData = null;
+
+// Execute when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-    // Language switching functionality
-    const langButtons = document.querySelectorAll('.language-btn');
-    const body = document.body;
-
-    // Set initial language based on HTML lang attribute
-    const initialLang = body.getAttribute('lang') || 'es';
-    setActiveLanguage(initialLang);
-
-    langButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const lang = this.getAttribute('data-lang');
-            body.setAttribute('lang', lang);
-            setActiveLanguage(lang);
-            calculateExperienceDurations(); // Update durations on language change
-        });
-    });
-
-    function setActiveLanguage(lang) {
-        // Update active state of language buttons
-        langButtons.forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-    }
-
-    // Show more/less functionality with a common handler
-    function setupShowMore(buttonId, contentId) {
-        const button = document.getElementById(buttonId);
-        const content = document.getElementById(contentId);
-
-        if (!button || !content) return;
-
-        button.addEventListener('click', function () {
-            const isExpanded = content.classList.toggle('hidden-content');
-            this.classList.toggle('active');
-
-            // Update button text and icon
-            const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
-            const icon = this.querySelector('i');
-            const textSpan = this.querySelector('span');
-
-            if (isExpanded) {
-                icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-            } else {
-                icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-            }
-
-            // Update text based on language and state
-            const translations = {
-                'skills': {
-                    'en': ['Show more skills', 'Show less skills'],
-                    'es': ['Mostrar más habilidades', 'Mostrar menos habilidades']
-                },
-                'exp': {
-                    'en': ['Show more experience', 'Show less experience'],
-                    'es': ['Mostrar más experiencia', 'Mostrar menos experiencia']
-                },
-                'certs': {
-                    'en': ['Show more certifications', 'Show less certifications'],
-                    'es': ['Mostrar más certificaciones', 'Mostrar menos certificaciones']
-                }
-            };
-
-            const type = buttonId.split('-')[2]; // 'skills', 'exp', or 'certs'
-            const [moreText, lessText] = translations[type][currentLang];
-            textSpan.textContent = isExpanded ? moreText : lessText;
-        });
-    }
-
-    // Set up all show more/less sections
-    setupShowMore('show-more-skills', 'more-skills');
-    setupShowMore('show-more-exp', 'more-experience');
-    setupShowMore('show-more-certs', 'more-certifications');
-
-    // Calculate experience durations
-    function calculateExperienceDurations() {
-        const experienceItems = document.querySelectorAll('.timeline-item');
-
-        experienceItems.forEach(item => {
-            const dateElement = item.querySelector('.timeline-date');
-            if (!dateElement) return;
-
-            const dateText = dateElement.textContent;
-            if (!dateText.includes('Present') && !dateText.includes('Presente')) return;
-
-            // Extract dates from text
-            const dateParts = dateText.split(' - ');
-            const startDateStr = dateParts[0];
-            const endDateStr = dateParts[1].includes('Present') || dateParts[1].includes('Presente') ? new Date() : dateParts[1];
-
-            // Convert to Date objects
-            const startDate = parseDate(startDateStr);
-            const endDate = endDateStr instanceof Date ? endDateStr : parseDate(endDateStr);
-
-            // Calculate difference
-            const duration = calculateDateDifference(startDate, endDate);
-
-            // Update the duration span
-            const durationSpan = item.querySelector('.duration');
-            if (durationSpan) {
-                durationSpan.textContent = duration;
-            }
-        });
-    }
-
-    // Helper function to parse dates in "MMM YYYY" format (e.g., "Jun 2023")
-    function parseDate(dateStr) {
-        if (dateStr === 'Present' || dateStr === 'Presente') return new Date();
-
-        const months = {
-            'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
-            'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11,
-            'Ene': 0, 'Feb': 1, 'Mar': 2, 'Abr': 3, 'May': 4, 'Jun': 5,
-            'Jul': 6, 'Ago': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dic': 11
-        };
-
-        const parts = dateStr.split(' ');
-        const month = months[parts[0]];
-        const year = parseInt(parts[1]);
-
-        return new Date(year, month, 1);
-    }
-
-    // Helper function to calculate date difference in "X years Y months" format
-    function calculateDateDifference(startDate, endDate) {
-        let months = (endDate.getFullYear() - startDate.getFullYear()) * 12;
-        months -= startDate.getMonth();
-        months += endDate.getMonth();
-
-        const years = Math.floor(months / 12);
-        const remainingMonths = months % 12;
-
-        // Get active language
-        const activeLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
-
-        if (activeLang === 'es') {
-            let result = '';
-            if (years > 0) {
-                result += `${years} año${years !== 1 ? 's' : ''} `;
-            }
-            if (remainingMonths > 0) {
-                result += `${remainingMonths} mes${remainingMonths !== 1 ? 'es' : ''}`;
-            }
-            return result.trim();
-        } else {
-            let result = '';
-            if (years > 0) {
-                result += `${years} yr${years !== 1 ? 's' : ''} `;
-            }
-            if (remainingMonths > 0) {
-                result += `${remainingMonths} mo${remainingMonths !== 1 ? 's' : ''}`;
-            }
-            return result.trim();
-        }
-    }
-
-    // Calculate experience durations on page load
-    calculateExperienceDurations();
-
-    // PDF Export functionality
-    const downloadPdfBtn = document.getElementById('download-pdf');
-    if (downloadPdfBtn) {
-        downloadPdfBtn.addEventListener('click', function () {
-            const element = document.getElementById('resume-content');
-            const opt = {
-                margin: 10,
-                filename: 'Farid_Maloof_CV.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            // Show loading state
-            downloadPdfBtn.disabled = true;
-            const originalContent = downloadPdfBtn.innerHTML;
-            const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
-            downloadPdfBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${currentLang === 'es' ? 'Generando PDF...' : 'Generating PDF...'
-                }`;
-
-            // Show all content before generating PDF
-            const hiddenContents = document.querySelectorAll('.hidden-content');
-            hiddenContents.forEach(el => {
-                el.style.display = 'block';
-            });
-
-            // Generate PDF
-            html2pdf().from(element).set(opt).save().then(() => {
-                // Restore original state
-                downloadPdfBtn.innerHTML = originalContent;
-                downloadPdfBtn.disabled = false;
-
-                // Hide content again if it was hidden before
-                hiddenContents.forEach(el => {
-                    const button = el.previousElementSibling?.querySelector('.show-more-btn');
-                    if (button && !button.classList.contains('active')) {
-                        el.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
-
-    // Animation for skill bars
-    const skillItems = document.querySelectorAll('.skill-item');
-
-    function animateSkillBars() {
-        skillItems.forEach(item => {
-            const level = item.getAttribute('data-level');
-            const bar = item.querySelector('.skill-level');
-            bar.style.width = '0';
-
-            // Animate after a short delay
-            setTimeout(() => {
-                bar.style.width = level + '%';
-            }, 100);
-        });
-    }
-
-    // Intersection Observer for skill bar animations
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkillBars();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) {
-        observer.observe(skillsSection);
-    }
+    loadResumeData('data.json');
 });
 
-// Configuración para el botón de mostrar más certificaciones
-const showMoreCertsBtn = document.getElementById('show-more-certs');
-const moreCertsSection = document.getElementById('more-certifications');
+async function loadResumeData(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        resumeData = await response.json();
+        initializeResume(resumeData);
+        setupEventListeners();
+    } catch (error) {
+        console.error('Error loading resume data:', error);
+        displayErrorMessage(error);
+    }
+}
 
-if (showMoreCertsBtn && moreCertsSection) {
-    showMoreCertsBtn.addEventListener('click', function () {
-        const isHidden = moreCertsSection.classList.toggle('hidden-content');
-        this.classList.toggle('active');
+// Function to display error message on the page
+function displayErrorMessage(error) {
+    document.body.innerHTML = `
+        <div style="text-align: center; padding: 50px;">
+            <h2>Error loading resume data</h2>
+            <p>Please check your connection and ensure 'data.json' is in the correct location.</p>
+            <p>Error details: ${error.message}</p>
+        </div>
+    `;
+}
+// Initialize the resume with data
+function initializeResume(data) {
+    // Set personal info
+    setTextContent('header-name', data?.personal_info?.name || '');
+    setTextContent('header-title-es', 'Ingeniero de Desarrollo & QA');
+    setTextContent('header-title-en', 'Development & QA Engineer');
 
-        // Actualizar icono
-        const icon = this.querySelector('i');
-        icon.classList.toggle('fa-chevron-down');
-        icon.classList.toggle('fa-chevron-up');
+    const profileImageEl = document.getElementById('profile-image');
+    if (data?.personal_info?.picture) {
+        profileImageEl.src = data.personal_info.picture;
+        profileImageEl.alt = data.personal_info.name;
+    } else {
+        // If no image, hide the element
+        profileImageEl.style.display = 'none';
+    }
 
-        // Actualizar texto según el idioma
-        const currentLang = document.querySelector('.language-btn.active').getAttribute('data-lang');
-        const textSpan = this.querySelector('span');
+    // Add social links
+    addSocialLinks(data?.personal_info?.contact || {});
 
-        if (currentLang === 'es') {
-            textSpan.textContent = isHidden ? 'Mostrar más certificaciones' : 'Mostrar menos certificaciones';
+    // Populate About section
+    setTextContent('about-description-es', data?.summary?.es || '');
+    setTextContent('about-description-en', data?.summary?.en || '');
+
+    // Populate skills
+    populateSkills(data?.skills || {});
+
+    // Populate languages
+    populateLanguages(data?.languages || {});
+
+    // Populate experience (only first 3 initially)
+    if (data?.experience) {
+        populateExperience(data.experience.slice(0, 3));
+    }
+
+    // Populate certifications (only first 6 initially)
+    if (data?.certifications) {
+        populateCertifications(data.certifications.slice(0, 6));
+    }
+
+    // Populate education
+    populateEducation(data?.education || []);
+}
+// Utility function to set text content based on id
+function setTextContent(elementId, text) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.textContent = text;
+    } else {
+        console.warn(`Element with ID '${elementId}' not found.`);
+    }
+}
+// Utility function to set profile image
+function setProfileImage(elementId, imageUrl, altText) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.src = imageUrl;
+        element.alt = altText;
+    } else {
+        console.warn(`Profile image with ID '${elementId}' not found.`);
+    }
+}
+
+function addSocialLinks(contact) {
+    const socialIconsContainer = document.getElementById('social-icons');
+    if (!socialIconsContainer) {
+        console.warn('Social icons container not found.');
+        return;
+    }
+
+    socialIconsContainer.innerHTML = '';  // Clear existing content
+    // Create social links dynamically
+    if (contact.linkedin) {
+        socialIconsContainer.innerHTML += `<a href="${contact.linkedin}" target="_blank" title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>`;
+    }
+    if (contact.github) {
+        socialIconsContainer.innerHTML += `<a href="${contact.github}" target="_blank" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>`;
+    }
+    if (contact.repo_git) {
+        socialIconsContainer.innerHTML += `<a href="${contact.repo_git}" target="_blank" title="Git Repo" rel="noopener noreferrer"><i class="fab fa-github"></i></a>`;
+    }
+    if (contact.email) {
+        socialIconsContainer.innerHTML += `<a href="mailto:${contact.email}" title="Email"><i class="fas fa-envelope"></i></a>`;
+    }
+    if (contact.phone) {
+        socialIconsContainer.innerHTML += `<a href="tel:${contact.phone.split(' ')[0]}" title="Phone"><i class="fas fa-phone"></i></a>`;
+    }
+}
+
+
+function populateSkills(skillsData) {
+    populateSkillCategory('lang_prog-skills', skillsData?.lenguajes_programacion || []);
+    populateSkillCategory('qa_auto-skills', skillsData?.calidad_automatizacion || []);
+    populateSkillCategory('pm_methods-skills', skillsData?.gestion_proyectos_metodologias || []);
+    populateSkillCategory('tools_tech-skills', skillsData?.herramientas_tecnologias || []);
+    populateSkillCategory('tech_practices-skills', skillsData?.practicas_tecnicas || []);
+    populateSkillCategory('soft-skills', skillsData?.soft_skills || []);
+}
+
+function populateSkillCategory(containerId, skills) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.warn(`Skill list container not found with ID: ${containerId}`);
+        return;
+    }
+
+    // Clear existing content
+    container.innerHTML = '';
+
+    // Add skills
+    skills.forEach(skill => {
+        const skillItem = document.createElement('div');
+        skillItem.classList.add('skill-item');
+        skillItem.textContent = skill;
+        container.appendChild(skillItem);
+    });
+
+    // Add "Show More" button if needed
+    const containerWidth = container.offsetWidth;
+    const skillItems = container.querySelectorAll('.skill-item');
+    let totalWidth = 0;
+
+    skillItems.forEach(item => {
+        totalWidth += item.offsetWidth + 10; // +10 for gap
+    });
+
+    // If skills exceed container width, add show more button
+    if (totalWidth > containerWidth) {
+        const showMoreBtn = document.createElement('button');
+        showMoreBtn.classList.add('show-more-skills');
+        showMoreBtn.innerHTML = `
+            <span class="es-content">Mostrar más</span>
+            <span class="en-content">Show more</span>
+            <i class="fas fa-chevron-down"></i>
+        `;
+
+        showMoreBtn.addEventListener('click', function () {
+            const skillList = this.parentElement.querySelector('.skill-list');
+            skillList.classList.toggle('expanded');
+
+            if (skillList.classList.contains('expanded')) {
+                this.innerHTML = `
+                    <span class="es-content">Mostrar menos</span>
+                    <span class="en-content">Show less</span>
+                    <i class="fas fa-chevron-up"></i>
+                `;
+            } else {
+                this.innerHTML = `
+                    <span class="es-content">Mostrar más</span>
+                    <span class="en-content">Show more</span>
+                    <i class="fas fa-chevron-down"></i>
+                `;
+            }
+        });
+
+        container.parentElement.appendChild(showMoreBtn);
+    }
+}
+
+// Function to populate languages
+function populateLanguages(languages) {
+    const container = document.getElementById('languages');
+    if (!container) {
+        console.warn('Languages container not found.');
+        return;
+    }
+    container.innerHTML = '';  // Clear existing content
+
+    for (const [language, level] of Object.entries(languages)) {
+        const languageItem = document.createElement('div');
+        languageItem.classList.add('skill-item');
+        languageItem.textContent = `${language} - ${level}`;
+        container.appendChild(languageItem);
+    }
+}
+// Function to create a timeline item for an experience
+function createTimelineItem(exp) {
+    return `
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <div class="timeline-company">${exp.company}</div>
+                <div class="timeline-date">${exp.start_date} - ${exp.end_date}</div>
+            </div>
+            <div class="timeline-role es-content">${exp.title.es}</div>
+            <div class="timeline-role en-content">${exp.title.en}</div>
+            <ul class="timeline-description">
+                ${exp.responsibilities.es.map(r => `<li class="es-content">${r}</li>`).join('')}
+                ${exp.responsibilities.en.map(r => `<li class="en-content">${r}</li>`).join('')}
+            </ul>
+        </div>
+    `;
+}
+
+// Populate experience section
+function populateExperience(experience) {
+    const timeline = document.getElementById('experience-timeline');
+    if (!timeline) {
+        console.warn('Experience timeline not found.');
+        return;
+    }
+    timeline.innerHTML = '';  // Clear existing content
+
+    experience.forEach(exp => {
+        timeline.innerHTML += createTimelineItem(exp);
+    });
+}
+
+// Populate certifications section
+function populateCertifications(certifications) {
+    const container = document.getElementById('certifications-container');
+    if (!container) {
+        console.warn('Certifications container not found.');
+        return;
+    }
+    container.innerHTML = '';  // Clear existing content
+
+    certifications.forEach(cert => {
+        container.innerHTML += `
+            <div class="certification-item">
+                <div class="certification-header">
+                    <div class="certification-title es-content">${cert.title.es}</div>
+                    <div class="certification-title en-content">${cert.title.en}</div>
+                    <div class="certification-date">${cert.expiration}</div>
+                </div>
+                <div class="certification-issuer">${cert.organization}</div>
+               ${cert.credential_url ? `<a href="${cert.credential_url}" target="_blank" class="certification-link es-content">Ver credencial</a>
+                <a href="${cert.credential_url}" target="_blank" class="certification-link en-content">View credential</a>` : ''}
+            </div>
+        `;
+    });
+}
+
+// Populate education section
+function populateEducation(education) {
+    const container = document.getElementById('education-container');
+    if (!container) {
+        console.warn('Education container not found.');
+        return;
+    }
+    container.innerHTML = ''; // Clear any existing content
+
+    education.forEach(edu => {
+        container.innerHTML += `
+            <div class="education-item">
+                <div class="education-institution">${edu.institution}</div>
+                <div class="education-degree es-content">${edu.degree_es}</div>
+                <div class="education-degree en-content">${edu.degree_en}</div>
+                <div class="education-date">${edu.date}</div>
+            </div>
+        `;
+    });
+}
+
+// Set up event listeners
+// Now you need to declare the vars for each Show More button
+function setupEventListeners() {
+    // Language switcher
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            document.body.setAttribute('lang', lang);
+            setActiveLanguage(lang);
+        });
+    });
+    // For simplicity, let's use the same "getText" as before
+    const getText = (button) => ({
+        showLessTextEs: 'Mostrar menos',
+        showMoreTextEs: 'Mostrar más',
+        showLessTextEn: 'Show less',
+        showMoreTextEn: 'Show more'
+    });
+
+    // Setup event listeners for the skills
+    setupShowMoreButton('show-more-technologies', resumeData.skills.technologies, function (skills) {
+        populateSkillCategory('technologies-skills', skills);
+    }, 5, 'technologies-skills', (cert) => {
+
+    }, getText
+    );
+    setupShowMoreButton('show-more-qa', resumeData.skills.qa_testing, function (skills) {
+        populateSkillCategory('qa-skills', skills);
+    }, 5, 'qa-skills', (cert) => {
+
+    }, getText
+    );
+    setupShowMoreButton('show-more-methodologies', resumeData.skills.methodologies, function (skills) {
+        populateSkillCategory('methodologies-skills', skills);
+    }, 5, 'methodologies-skills', (cert) => {
+
+    }, getText
+    );
+    setupShowMoreButton('show-more-languages', resumeData.skills.languagesArray, function (skills) {
+        populateSkillCategory('languages', skills);
+    }, 5, 'languages', (cert) => {
+
+    }, getText
+    );
+    setupShowMoreButton('show-more-additionals', resumeData.skills.additional, function (skills) {
+        populateSkillCategory('additionals', skills);
+    }, 5, 'additionals', (cert) => {
+
+    }, getText
+    );
+
+    // "Show More" functionality for experience
+    setupShowMoreButton('show-more-exp', resumeData.experience, populateExperience, 3, 'experience-timeline', createTimelineItem, (button) => {
+        return {
+            showLessTextEs: 'Mostrar menos experiencia',
+            showMoreTextEs: 'Mostrar más experiencia',
+            showLessTextEn: 'Show less experience',
+            showMoreTextEn: 'Show more experience'
+        };
+    });
+
+
+    // "Show More" functionality for certifications
+    setupShowMoreButton('show-more-certs', resumeData.certifications, populateCertifications, 6, 'certifications-container', (cert) => {
+        return `
+            <div class="certification-item">
+                <div class="certification-header">
+                    <div class="certification-title es-content">${cert.title.es}</div>
+                    <div class="certification-title en-content">${cert.title.en}</div>
+                    <div class="certification-date">${cert.expiration}</div>
+                </div>
+                <div class="certification-issuer">${cert.organization}</div>
+                ${cert.credential_url ? `<a href="${cert.credential_url}" target="_blank" class="certification-link es-content">Ver credencial</a>
+                <a href="${cert.credential_url}" target="_blank" class="certification-link en-content">View credential</a>` : ''}
+            </div>
+        `;
+    }, (button) => {
+        return {
+            showLessTextEs: 'Mostrar menos certificaciones',
+            showMoreTextEs: 'Mostrar más certificaciones',
+            showLessTextEn: 'Show less certifications',
+            showMoreTextEn: 'Show more certifications',
+        };
+    });
+}
+
+// Function to handle "Show More" button functionality
+function setupShowMoreButton(buttonId, dataArray, populateFunction, initialCount, containerId, generateItemHTML, getText) {
+    const button = document.getElementById(buttonId);
+    if (!button) {
+        console.warn(`Button with ID '${buttonId}' not found.`);
+        return;
+    }
+
+    let isExpanded = false;
+    button.addEventListener('click', function () {
+        isExpanded = !isExpanded;
+
+        // Get active language
+        const currentLang = document.body.getAttribute('lang');
+
+        if (isExpanded) {
+            populateFunction(dataArray);
+            this.innerHTML = `
+                <span class="es-content">${getText(button).showLessTextEs || 'Mostrar menos'}</span>
+                <span class="en-content">${getText(button).showLessTextEn || 'Show less'}</span>
+                <i class="fas fa-chevron-up"></i>
+            `;
+
         } else {
-            textSpan.textContent = isHidden ? 'Show more certifications' : 'Show fewer certifications';
+            populateFunction(dataArray.slice(0, initialCount));
+            this.innerHTML = `
+                <span class="es-content">${getText(button).showMoreTextEs || 'Mostrar más'}</span>
+                <span class="en-content">${getText(button).showMoreTextEn || 'Show more'}</span>
+                <i class="fas fa-chevron-down"></i>
+            `;
+        }
+
+    });
+}
+
+function getText(button) {
+    return {
+        showLessTextEs: button.showLessTextEs || 'Mostrar menos',
+        showMoreTextEs: button.showMoreTextEs || 'Mostrar más',
+        showLessTextEn: button.showLessTextEn || 'Show less',
+        showMoreTextEn: 'Show more',
+    };
+}
+// Function to set the active language
+function setActiveLanguage(lang) {
+    const body = document.body;
+
+    // Update active state of language buttons
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
         }
     });
+
+    // Set lang attribute for body element
+    body.setAttribute('lang', lang);
+
+    // Call functions that need to update based on language changes here
+}
+// PDF Export functionality
+async function generatePDF() {
+    const element = document.getElementById('resume-content');
+    const downloadPdfBtn = document.getElementById('download-pdf');
+    const opt = {
+        margin: 10,
+        filename: 'Farid_Maloof_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    // Show loading state
+    downloadPdfBtn.disabled = true;
+    const originalContent = downloadPdfBtn.innerHTML;
+    const currentLang = document.body.getAttribute('lang');
+    downloadPdfBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${currentLang === 'es' ? 'Generando PDF...' : 'Generating PDF...'
+        }`;
+
+    // Show all content before generating PDF
+    const hiddenContents = document.querySelectorAll('.hidden-content');
+    hiddenContents.forEach(el => {
+        el.style.display = 'block';
+    });
+
+    try {
+        await html2pdf().from(element).set(opt).save();
+    } catch (error) {
+        console.error('Error generating PDF:', error);
+        alert('There was an error generating the PDF. Please try again.');
+    } finally {
+        // Restore original state
+        downloadPdfBtn.innerHTML = originalContent;
+        downloadPdfBtn.disabled = false;
+
+        // Hide content again if it was hidden before
+        hiddenContents.forEach(el => {
+            const button = el.previousElementSibling?.querySelector('.show-more-btn');
+            if (button && !button.classList.contains('active')) {
+                el.style.display = 'none';
+            }
+        });
+    }
 }

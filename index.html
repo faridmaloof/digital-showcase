@@ -26,22 +26,17 @@
                 </button>
             </div>
             <div class="header-content">
-                <img src="https://media.licdn.com/dms/image/D4E03AQH0h8Y4Ql8g2w/profile-displayphoto-shrink_400_400/0/1685576133281?e=1721260800&v=beta&t=W0h8f5K5n3DgWQl3u9eWz1q3Z9X9Qe0Q9X9Qe0Q9X9Q"
-                    alt="Farid Maloof" class="profile-img">
-                <h1>Farid Maloof Suarez</h1>
+                <img src="https://media.licdn.com/dms/image/v2/C5603AQEkG4SjGIlSuA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516776243952?e=1751500800&v=beta&t=H1hITw71Yw6sZYTZ6JhysKwAnjBSTQaukbTtd7MJUs4"
+                    alt="Farid Maloof" class="profile-img" id="profile-image">
+                <h1 id="header-name"></h1>
                 <div class="es-content">
-                    <h2>Ingeniero de Desarrollo & QA Especialista</h2>
+                    <h2 id="header-title-es"></h2>
                 </div>
                 <div class="en-content">
-                    <h2>Development & QA Specialist Engineer</h2>
+                    <h2 id="header-title-en"></h2>
                 </div>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/fmaloofs/" target="_blank" title="LinkedIn"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/faridmaloof" target="_blank" title="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a href="mailto:faridmaloof@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+573002357202" title="Teléfono"><i class="fas fa-phone"></i></a>
+                <div class="social-icons" id="social-icons">
+                    <!-- Social links will be added here -->
                 </div>
             </div>
         </div>
@@ -55,19 +50,17 @@
                 <h2 class="section-title es-content">Sobre mí</h2>
                 <h2 class="section-title en-content">About Me</h2>
                 <div class="es-content">
-                    <p>Profesional con más de 10 años de experiencia en desarrollo de software y control de calidad,
-                        especializado en automatización de pruebas y metodologías ágiles. Certificado como Scrum Master
-                        Professional y con amplios conocimientos en tecnologías como Java, .NET, SQL y Power BI.</p>
-                    <p>Apasionado por la innovación tecnológica y el aprendizaje continuo, con experiencia liderando
-                        equipos multidisciplinarios en diversos sectores como fintech, energía y telecomunicaciones.</p>
+                    <p id="about-description-es"></p>
                 </div>
                 <div class="en-content">
-                    <p>Professional with over 10 years of experience in software development and quality assurance,
-                        specialized in test automation and agile methodologies. Certified as Scrum Master Professional
-                        with extensive knowledge in technologies like Java, .NET, SQL and Power BI.</p>
-                    <p>Passionate about technological innovation and continuous learning, with experience leading
-                        multidisciplinary teams in various sectors including fintech, energy and telecommunications.</p>
+                    <p id="about-description-en"></p>
                 </div>
+            </section>
+
+            <section id="languages" class="section">
+                <h2 class="section-title es-content">Idiomas</h2>
+                <h2 class="section-title en-content">Languages</h2>
+                <div class="languages-list" id="languages-container"></div>
             </section>
 
             <!-- Skills Section -->
@@ -77,121 +70,47 @@
 
                 <div class="skills-container">
                     <div class="skill-category">
-                        <h3 class="es-content">Tecnologías</h3>
-                        <h3 class="en-content">Technologies</h3>
-                        <div class="skill-list">
-                            <div class="skill-item" data-level="90">
-                                <span class="skill-name">Java</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-level="85">
-                                <span class="skill-name">C# / .NET</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-level="80">
-                                <span class="skill-name">Python</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-level="75">
-                                <span class="skill-name">JavaScript</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 75%"></div>
-                                </div>
-                            </div>
+                        <h3 class="es-content">Lenguajes de Programación</h3>
+                        <h3 class="en-content">Programming Languages</h3>
+                        <div class="skill-list" id="lenguajes_programacion-skills">
+                            <!-- Skills will be dynamically added here -->
                         </div>
                     </div>
-
                     <div class="skill-category">
-                        <h3 class="es-content">Bases de Datos</h3>
-                        <h3 class="en-content">Databases</h3>
-                        <div class="skill-list">
-                            <div class="skill-item" data-level="85">
-                                <span class="skill-name">SQL</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-level="80">
-                                <span class="skill-name">MySQL</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-level="75">
-                                <span class="skill-name">Oracle</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 75%"></div>
-                                </div>
-                            </div>
+                        <h3 class="es-content">Calidad y Automatización</h3>
+                        <h3 class="en-content">QA & Automation</h3>
+                        <div class="skill-list" id="calidad_automatizacion-skills">
+                            <!-- Skills will be dynamically added here -->
                         </div>
                     </div>
-                </div>
-
-                <div class="show-more-container">
-                    <button id="show-more-skills" class="show-more-btn">
-                        <span class="es-content">Mostrar más habilidades</span>
-                        <span class="en-content">Show more skills</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                </div>
-
-                <div id="more-skills" class="hidden-content">
-                    <div class="skills-container">
-                        <div class="skill-category">
-                            <h3 class="es-content">QA & Testing</h3>
-                            <h3 class="en-content">QA & Testing</h3>
-                            <div class="skill-list">
-                                <div class="skill-item" data-level="90">
-                                    <span class="skill-name">Selenium</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-level" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-level="85">
-                                    <span class="skill-name">Test Automation</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-level" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-level="80">
-                                    <span class="skill-name">JIRA</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-level" style="width: 80%"></div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="skill-category">
+                        <h3 class="es-content">Gestión de Proyectos y Metodologías</h3>
+                        <h3 class="en-content">Project Management & Methodologies</h3>
+                        <div class="skill-list" id="gestion_proyectos_metodologias-skills">
+                            <!-- Skills will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="es-content">Herramientas y Tecnologías</h3>
+                        <h3 class="en-content">Tools & Technologies</h3>
+                        <div class="skill-list" id="herramientas_tecnologias-skills">
+                            <!-- Languages will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="es-content">Prácticas Técnicas</h3>
+                        <h3 class="en-content">Technical Practices</h3>
+                        <div class="skill-list" id="practicas_tecnicas-skills">
+                            <!-- Languages will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="es-content">Habilidades Blandas</h3>
+                        <h3 class="en-content">Soft Skills</h3>
+                        <div class="skill-list" id="soft_skills-skills">
+                            <!-- Languages will be dynamically added here -->
                         </div>
 
-                        <div class="skill-category">
-                            <h3 class="es-content">Metodologías</h3>
-                            <h3 class="en-content">Methodologies</h3>
-                            <div class="skill-list">
-                                <div class="skill-item" data-level="90">
-                                    <span class="skill-name">Scrum</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-level" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-level="85">
-                                    <span class="skill-name">Agile</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-level" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item" data-level="80">
-                                    <span class="skill-name">PMI</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-level" style="width: 80%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -201,85 +120,9 @@
                 <h2 class="section-title es-content">Experiencia Profesional</h2>
                 <h2 class="section-title en-content">Professional Experience</h2>
 
-                <div class="timeline">
-                    <!-- Most recent 3 experiences visible by default -->
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-company">Stori</div>
-                            <div class="timeline-date">Jun 2023 - Presente · <span class="duration">1 año 11
-                                    meses</span></div>
-                        </div>
-                        <div class="timeline-role es-content">Ingeniero QA</div>
-                        <div class="timeline-role en-content">QA Engineer</div>
-                        <ul class="timeline-description">
-                            <li class="es-content">Desarrollé e implementé estrategias de automatización de pruebas que
-                                redujeron el tiempo de ejecución en un 40%</li>
-                            <li class="en-content">Developed and implemented test automation strategies that reduced
-                                execution time by 40%</li>
-                            <li class="es-content">Lideré el diseño de casos de prueba para nuevas funcionalidades del
-                                producto</li>
-                            <li class="en-content">Led test case design for new product features</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-company">GMSTEK, LLC</div>
-                            <div class="timeline-date">Jul 2022 - Jun 2023 · <span class="duration">1 año</span></div>
-                        </div>
-                        <div class="timeline-role es-content">Desarrollador y Tester QA</div>
-                        <div class="timeline-role en-content">Development & QA Tester</div>
-                        <ul class="timeline-description">
-                            <li class="es-content">Implementé frameworks de pruebas automatizadas utilizando Selenium y
-                                Python</li>
-                            <li class="en-content">Implemented automated test frameworks using Selenium and Python</li>
-                            <li class="es-content">Optimicé procesos de CI/CD integrando pruebas automatizadas</li>
-                            <li class="en-content">Optimized CI/CD processes by integrating automated tests</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <div class="timeline-company">COLSOF S.A.S</div>
-                            <div class="timeline-date">Ago 2021 - Jun 2022 · <span class="duration">11 meses</span>
-                            </div>
-                        </div>
-                        <div class="timeline-role es-content">Ingeniero Especialista</div>
-                        <div class="timeline-role en-content">Specialist Engineer</div>
-                        <ul class="timeline-description">
-                            <li class="es-content">Gestioné proyectos utilizando metodologías ágiles (Scrum, Kanban)
-                            </li>
-                            <li class="en-content">Managed projects using agile methodologies (Scrum, Kanban)</li>
-                            <li class="es-content">Implementé prácticas de DevOps que mejoraron la eficiencia del equipo
-                            </li>
-                            <li class="en-content">Implemented DevOps practices that improved team efficiency</li>
-                        </ul>
-                    </div>
+                <div class="timeline" id="experience-timeline">
+                    <!-- Experience items will be dynamically added here -->
                 </div>
-
-                <!-- Hidden experiences -->
-                <div id="more-experience" class="hidden-content">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-header">
-                                <div class="timeline-company">GreenSQA S.A</div>
-                                <div class="timeline-date">Feb 2020 - Ago 2021 · <span class="duration">1 año 7
-                                        meses</span></div>
-                            </div>
-                            <div class="timeline-role es-content">Ingeniero de Pruebas</div>
-                            <div class="timeline-role en-content">Test Engineer</div>
-                            <ul class="timeline-description">
-                                <li class="es-content">Desarrollé scripts de automatización con Robot Framework</li>
-                                <li class="en-content">Developed automation scripts with Robot Framework</li>
-                                <li class="es-content">Implementé pruebas de rendimiento para aplicaciones web</li>
-                                <li class="en-content">Implemented performance testing for web applications</li>
-                            </ul>
-                        </div>
-
-                        <!-- Additional experience items would go here -->
-                    </div>
-                </div>
-
                 <div class="show-more-container">
                     <button id="show-more-exp" class="show-more-btn">
                         <span class="es-content">Mostrar más experiencia</span>
@@ -294,50 +137,8 @@
                 <h2 class="section-title es-content">Certificaciones</h2>
                 <h2 class="section-title en-content">Certifications</h2>
 
-                <div class="certifications-container">
-                    <!-- Certificaciones visibles inicialmente -->
-                    <div class="certification-item">
-                        <div class="certification-header">
-                            <div class="certification-title">Scrum Master Professional Certificate (SMPC®)</div>
-                            <div class="certification-date">May 2020</div>
-                        </div>
-                        <div class="certification-issuer">CertiProf</div>
-                    </div>
-
-                    <div class="certification-item">
-                        <div class="certification-header">
-                            <div class="certification-title">Power BI: Desde cero. El curso más poderoso de 2021</div>
-                            <div class="certification-date">Jul 2021</div>
-                        </div>
-                        <div class="certification-issuer">Udemy</div>
-                    </div>
-
-                    <div class="certification-item">
-                        <div class="certification-header">
-                            <div class="certification-title">SQL (Intermediate)</div>
-                            <div class="certification-date">Ene 2025</div>
-                        </div>
-                        <div class="certification-issuer">HackerRank</div>
-                    </div>
-
-                    <!-- Certificaciones adicionales (ocultas inicialmente) -->
-                    <div id="more-certifications" class="hidden-content">
-                        <div class="certification-item">
-                            <div class="certification-header">
-                                <div class="certification-title">Master Web Api ASP NET Core 9</div>
-                                <div class="certification-date">Ene 2025</div>
-                            </div>
-                            <div class="certification-issuer">Udemy</div>
-                        </div>
-
-                        <div class="certification-item">
-                            <div class="certification-header">
-                                <div class="certification-title">C# (Basic)</div>
-                                <div class="certification-date">Ene 2025</div>
-                            </div>
-                            <div class="certification-issuer">HackerRank</div>
-                        </div>
-                    </div>
+                <div class="certifications-container" id="certifications-container">
+                    <!-- Certifications will be dynamically added here -->
                 </div>
 
                 <div class="show-more-container">
@@ -354,22 +155,22 @@
                 <h2 class="section-title es-content">Educación</h2>
                 <h2 class="section-title en-content">Education</h2>
 
-                <div class="education-item">
-                    <div class="education-institution">Asturias Corporación Universitaria</div>
-                    <div class="education-degree es-content">Especialización en Gerencia de Proyectos</div>
-                    <div class="education-degree en-content">Specialization in Project Management</div>
-                    <div class="education-date">Oct 2023 - Nov 2024</div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-institution">Uniremington</div>
-                    <div class="education-degree es-content">Ingeniería de Sistemas</div>
-                    <div class="education-degree en-content">Systems Engineering</div>
-                    <div class="education-date">Feb 2020 - Mar 2023</div>
+                <div id="education-container">
+                    <!-- Education items will be dynamically added here -->
                 </div>
             </section>
         </div>
     </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="es-content">© 2025 Farid Maloof. Todos los derechos reservados.</p>
+                <p class="en-content">© 2025 Farid Maloof. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
