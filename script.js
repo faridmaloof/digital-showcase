@@ -121,12 +121,12 @@ function addSocialLinks(contact) {
 
 
 function populateSkills(skillsData) {
-    populateSkillCategory('lang_prog-skills', skillsData?.lenguajes_programacion || []);
-    populateSkillCategory('qa_auto-skills', skillsData?.calidad_automatizacion || []);
-    populateSkillCategory('pm_methods-skills', skillsData?.gestion_proyectos_metodologias || []);
-    populateSkillCategory('tools_tech-skills', skillsData?.herramientas_tecnologias || []);
-    populateSkillCategory('tech_practices-skills', skillsData?.practicas_tecnicas || []);
-    populateSkillCategory('soft-skills', skillsData?.soft_skills || []);
+    populateSkillCategory('lenguajes_programacion-skills', skillsData?.lenguajes_programacion || []);
+    populateSkillCategory('calidad_automatizacion-skills', skillsData?.calidad_automatizacion || []);
+    populateSkillCategory('gestion_proyectos_metodologias-skills', skillsData?.gestion_proyectos_metodologias || []);
+    populateSkillCategory('herramientas_tecnologias-skills', skillsData?.herramientas_tecnologias || []);
+    populateSkillCategory('practicas_tecnicas-skills', skillsData?.practicas_tecnicas || []);
+    populateSkillCategory('soft_skills-skills', skillsData?.soft_skills || []);
 }
 
 function populateSkillCategory(containerId, skills) {
@@ -191,20 +191,21 @@ function populateSkillCategory(containerId, skills) {
 
 // Function to populate languages
 function populateLanguages(languages) {
-    const container = document.getElementById('languages');
+    const container = document.getElementById('languages-container');
     if (!container) {
         console.warn('Languages container not found.');
         return;
     }
-    container.innerHTML = '';  // Clear existing content
+    container.innerHTML = '';
 
     for (const [language, level] of Object.entries(languages)) {
         const languageItem = document.createElement('div');
-        languageItem.classList.add('skill-item');
+        languageItem.classList.add('language-item');
         languageItem.textContent = `${language} - ${level}`;
         container.appendChild(languageItem);
     }
 }
+
 // Function to create a timeline item for an experience
 function createTimelineItem(exp) {
     return `
