@@ -434,43 +434,58 @@ function setActiveLanguage(lang) {
 async function generatePDF() {
     const element = document.getElementById('resume-content');
     const downloadPdfBtn = document.getElementById('download-pdf');
-    const opt = {
-        margin: 10,
-        filename: 'Farid_Maloof_CV.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
+    const currentLang = document.body.getAttribute('lang');
 
-    // Show loading state
+    // Mostrar estado de carga
     downloadPdfBtn.disabled = true;
     const originalContent = downloadPdfBtn.innerHTML;
-    const currentLang = document.body.getAttribute('lang');
-    downloadPdfBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${currentLang === 'es' ? 'Generando PDF...' : 'Generating PDF...'
-        }`;
-
-    // Show all content before generating PDF
-    const hiddenContents = document.querySelectorAll('.hidden-content');
-    hiddenContents.forEach(el => {
-        el.style.display = 'block';
-    });
+    downloadPdfBtn.innerHTML = `
+        <i class="fas fa-spinner fa-spin"></i>
+        ${currentLang === 'es' ? 'Generando PDF...' : 'Generating PDF...'}
+    `;
 
     try {
-        await html2pdf().from(element).set(opt).save();
+        // Clonar el elemento para evitar afectar la visualización actual
+        const elementClone = element.cloneNode(true);
+        document.body.appendChild(elementClone);
+        elementClone.style.position = 'absolute';
+        elementClone.style.left = '-9999px';
+
+        // Forzar la carga de imágenes externas
+        await Promise.all(Array.from(elementClone.querySelectorAll('img')).map(img => {
+            if (img.complete) return Promise.resolve();
+            return new Promise((resolve, reject) => {
+                img.onload = resolve;
+                img.onerror = reject;
+            });
+        }));
+
+        // Configuración de html2pdf
+        const opt = {
+            margin: 10,
+            filename: 'Farid_Maloof_CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: {
+                scale: 2,
+                logging: true,
+                useCORS: true
+            },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Generar PDF
+        await html2pdf().set(opt).from(elementClone).save();
+
     } catch (error) {
         console.error('Error generating PDF:', error);
-        alert('There was an error generating the PDF. Please try again.');
+        alert(currentLang === 'es'
+            ? 'Error al generar el PDF. Por favor intente nuevamente.'
+            : 'Error generating PDF. Please try again.');
     } finally {
-        // Restore original state
+        // Restaurar estado original
         downloadPdfBtn.innerHTML = originalContent;
         downloadPdfBtn.disabled = false;
-
-        // Hide content again if it was hidden before
-        hiddenContents.forEach(el => {
-            const button = el.previousElementSibling?.querySelector('.show-more-btn');
-            if (button && !button.classList.contains('active')) {
-                el.style.display = 'none';
-            }
-        });
+        const clone = document.querySelector('#resume-content-clone');
+        if (clone) document.body.removeChild(clone);
     }
 }
