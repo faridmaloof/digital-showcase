@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react'; // El único que puede necesitar React si usaras hooks antiguos
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import profileData from './data/profileData.json';
 import { useTheme } from './hooks/useTheme';
@@ -14,9 +14,8 @@ import Languages from './components/Languages';
 import ThemeToggle from './components/ThemeToggle';
 import CVDocument from './components/CVDocument';
 
-import './styles/App.css'; // Asegúrate que la ruta sea correcta si moviste el archivo
+import './styles/App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// 👇 CAMBIO AQUÍ: Importamos el nuevo icono
 import { faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 const App: FC = () => {
@@ -45,8 +44,7 @@ const App: FC = () => {
       <PDFDownloadLink document={<CVDocument />} fileName="FaridMaloof_CV_Profesional.pdf">
         {({ loading }) => (
           <button className="download-btn">
-            {loading ? 'Generando PDF...' : <><FontAwesomeIcon icon={faFileArrowDown} /> Descargar CV Resumido</>} 
-            {/* 👆 CAMBIO AQUÍ: Usamos el nuevo icono */}
+            {loading ? 'Generando PDF...' : <><FontAwesomeIcon icon={faFileArrowDown} /> Descargar CV Resumido</>}
           </button>
         )}
       </PDFDownloadLink>
