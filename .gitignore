@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules  # La carpeta gigante con todas las librerías. Se regenera con `npm install`.
+/.pnp
+.pnp.js
+
+# testing
+/coverage      # Reportes de cobertura de pruebas. Se generan localmente.
+
+# production
+/build         # La carpeta con la versión final y optimizada de tu app. Se genera con `npm run build`.
+
+# misc
+.DS_Store      # Archivo de metadatos de carpetas en macOS.
+.env.local     # ¡CRÍTICO PARA LA SEGURIDAD! Aquí se guardan variables de entorno y secretos.
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log* # Archivos de registro de errores de npm.
+yarn-debug.log*
+yarn-error.log*
