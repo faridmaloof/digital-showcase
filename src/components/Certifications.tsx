@@ -1,4 +1,5 @@
-import React, { useState, FC } from 'react';
+import { useState } from 'react';
+import type { FC } from 'react';
 import { formatDateRange } from '../utils/dateFormatter';
 
 interface Certification {

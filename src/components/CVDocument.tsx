@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import type { FC } from 'react';
 import { Page, Text, View, Document, StyleSheet, Link, Font } from '@react-pdf/renderer';
 import profileData from '../data/profileData.json';
 import { formatDateRange } from '../utils/dateFormatter';
