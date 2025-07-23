@@ -1,0 +1,157 @@
+{
+  "personalInfo": {
+    "name": "Farid Maloof S.",
+    "headline": "Ingeniero de Software | Arquitecto de Soluciones | QA Automation",
+    "location": "Bogotá, D.C., Colombia",
+    "email": "faridmaloof@gmail.com",
+    "phone": "+573002357202",
+    "linkedin": "https://www.linkedin.com/in/fmaloofs",
+    "github": "https://github.com/faridmaloof"
+  },
+  "summary": "Ingeniero de Software con más de 10 años de experiencia liderando proyectos de TI en los sectores de Oil & Gas, Finanzas y Desarrollo de Software. Especializado en arquitectura de soluciones, desarrollo full-stack y aseguramiento de la calidad (QA). Apasionado por la creación de soluciones efectivas y creativas que resuelven complejos desafíos de negocio, con un fuerte enfoque en la mejora continua y la satisfacción del cliente.",
+  "experience": [
+    {
+      "company": "Stori",
+      "title": "QA Automation Engineer",
+      "startDate": { "year": 2023, "month": "Jun" },
+      "endDate": "Presente",
+      "description": "Lidero la definición y ejecución de estrategias de prueba para productos financieros. Automatizo flujos de trabajo críticos, reduciendo el tiempo de regresión en un 40%. Colaboro en el diseño de productos para asegurar la calidad desde el inicio, resultando en una disminución del 25% en bugs post-lanzamiento.",
+      "featured": true
+    },
+    {
+      "company": "GMSTEK, LLC",
+      "title": "Development & QA Tester",
+      "startDate": { "year": 2022, "month": "Jul" },
+      "endDate": { "year": 2023, "month": "Jun" },
+      "description": "Diseñé y ejecuté planes de prueba exhaustivos para aplicaciones web y móviles. Implementé frameworks de automatización desde cero usando Selenium y Cypress, optimizando la cobertura de pruebas y la eficiencia del equipo.",
+      "featured": true
+    },
+    {
+      "company": "COLSOF S.A.S",
+      "title": "Ingeniero Especialista",
+      "startDate": { "year": 2021, "month": "Ago" },
+      "endDate": { "year": 2022, "month": "Jun" },
+      "description": "Gestioné proyectos de desarrollo de software bajo estándares PMI y metodologías ágiles. Lideré equipos de desarrollo, planificando sprints y gestionando recursos para asegurar la entrega puntual de soluciones tecnológicas innovadoras.",
+      "featured": true
+    },
+    {
+      "company": "ECOPROYECT CONSULTORIA SAS",
+      "title": "Senior J2EE Developer",
+      "startDate": { "year": 2021, "month": "Nov" },
+      "endDate": { "year": 2022, "month": "Feb" },
+      "description": "Lideré el diseño e implementación de soluciones de software robustas utilizando Java y Spring Boot. Colaboré con el equipo de arquitectura para diseñar soluciones técnicas escalables y eficientes, utilizando servicios de AWS como EC2 y RDS.",
+      "featured": false
+    },
+    {
+        "company": "GreenSQA S.A",
+        "title": "Software Test Engineer",
+        "startDate": { "year": 2020, "month": "Feb" },
+        "endDate": { "year": 2021, "month": "Feb" },
+        "description": "Ejecuté pruebas funcionales y no funcionales, desarrollando robots de prueba para maximizar la cobertura y minimizar el esfuerzo. Reporté no conformidades y contribuí a la mejora de las metodologías de testing.",
+        "featured": false
+    },
+    {
+        "company": "Busscar de Colombia",
+        "title": "Senior Software Developer",
+        "startDate": { "year": 2017, "month": "Sep" },
+        "endDate": { "year": 2020, "month": "Feb" },
+        "description": "Diseñé y desarrollé sistemas de Gestión de Datos de Producto (PDM) utilizando herramientas web y Visual Studio (C#, VB.Net), integrando con diversas bases de datos (MySQL, Oracle, SQL Server).",
+        "featured": false
+    },
+    {
+      "company": "EMCALI EICE ESP",
+      "title": "Technology Solutions Analyst",
+      "startDate": { "year": 2016, "month": "Jun" },
+      "endDate": { "year": 2017, "month": "Sep" },
+      "description": "Desarrollé y mantuve aplicaciones internas para el sector de las telecomunicaciones, colaborando en el análisis de requisitos y en la generación de soluciones tecnológicas innovadoras.",
+      "featured": false
+    }
+  ],
+  "projects": [
+    {
+      "title": "Control de Gastos Personales",
+      "description": "Aplicación de escritorio en C# para la gestión de finanzas personales.",
+      "repoUrl": "https://github.com/faridmaloof/ControlGastos"
+    },
+    {
+      "title": "Sistema de Inventario Básico",
+      "description": "Aplicación web ligera en JavaScript para la gestión de inventarios.",
+      "repoUrl": "https://github.com/faridmaloof/inventario_basico"
+    },
+    {
+      "title": "Desafío de QA Automation",
+      "description": "Repositorio con soluciones a desafíos de automatización de pruebas en Python.",
+      "repoUrl": "https://github.com/faridmaloof/QA-Automation-Challenge"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Uniremington",
+      "degree": "Ingeniería de Sistemas",
+      "startDate": { "year": 2020, "month": "Feb" },
+      "endDate": { "year": 2023, "month": "Mar" },
+      "featured": true
+    },
+    {
+      "institution": "Universidad Autónoma de Occidente",
+      "degree": "Ingeniero Informático",
+      "startDate": { "year": 2014 },
+      "endDate": { "year": 2017 },
+      "featured": true
+    },
+    {
+      "institution": "Universidad del Valle (CO)",
+      "degree": "Tecnología en Sistemas de Información",
+      "startDate": { "year": 2006, "month": "Ago" },
+      "endDate": { "year": 2010, "month": "May" },
+      "featured": false
+    }
+  ],
+  "skills": {
+    "technical": ["Java", "C#", ".NET", "ASP.NET Core", "JavaScript", "TypeScript", "React.js", "Node.js", "Python", "SQL", "PL/SQL", "HTML", "CSS"],
+    "tools": ["Selenium", "Cypress", "Playwright", "Appium", "JMeter", "Postman", "Docker", "Kubernetes", "Git", "Jira", "Azure DevOps", "Jenkins"],
+    "methodologies": ["Agile", "Scrum", "CI/CD", "TDD", "BDD", "Microservicios", "Arquitectura de Software", "QA Automation"]
+  },
+  "languages": [
+    { "name": "Español", "proficiency": "Nativo" },
+    { "name": "Inglés", "proficiency": "Competencia Profesional" }
+  ],
+  "certifications": [
+    {
+      "name": "ISTQB® Certified Tester Foundation Level (CTFL)",
+      "authority": "Brightest",
+      "date": { "year": 2025, "month": "Jun" },
+      "featured": true
+    },
+    {
+      "name": "Scrum Master Professional Certificate (SMPC®)",
+      "authority": "CertiProf",
+      "date": { "year": 2020, "month": "May" },
+      "featured": true
+    },
+    {
+      "name": "Scrum Product Owner Professional Certificate (SPOPC)",
+      "authority": "CertiProf",
+      "date": { "year": 2020, "month": "May" },
+      "featured": true
+    },
+    {
+      "name": "Agile Coach Professional Certificate (ACPC)",
+      "authority": "CertiProf",
+      "date": { "year": 2021, "month": "Nov" },
+      "featured": false
+    },
+    {
+      "name": "Amazon API Gateway for Serverless Applications",
+      "authority": "Amazon Web Services (AWS)",
+      "date": { "year": 2020, "month": "Sep" },
+      "featured": false
+    },
+    {
+        "name": "Architecting with Google Kubernetes Engine",
+        "authority": "Coursera",
+        "date": { "year": 2020, "month": "Nov" },
+        "featured": false
+    }
+  ]
+}
