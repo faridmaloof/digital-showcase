@@ -1,25 +1,37 @@
-/* --- Variables de Color --- */
 :root {
-  --primary-color: #0a66c2; /* LinkedIn Blue */
-  --secondary-color: #6c757d;
-  --background-light: #f8f9fa;
-  --background-dark: #1a1a1a;
-  --text-light: #212529;
-  --text-dark: #e0e0e0;
+  --primary-color: #3b82f6;
+  --primary-color-hover: #2563eb;
+  --secondary-color: #4b5563;
+  
+  --download-btn-bg: #f97316;     
+  --download-btn-hover: #ea580c; 
+
+  --background-light: #f3f4f6;
+  --text-light: #1f2937;
   --card-bg-light: #ffffff;
-  --card-bg-dark: #2a2a2a;
-  --border-color-light: #dee2e6;
+  --border-color-light: #e5e7eb;
+  --headline-light: #4b5563;
+  --skill-bg-light: #e5e7eb;
+  --skill-text-light: #374151;
+
+  --background-dark: #111827;
+  --text-dark: #d1d5db;
+  --card-bg-dark: #1f2937;
   --border-color-dark: #444;
+  --headline-dark: #9ca3af;
+  --skill-bg-dark: #374151;
+  --skill-text-dark: #e5e7eb;
   --link-dark: #7aa5d9;
 }
 
-/* --- Tema Claro (por defecto) --- */
 body {
   font-family: 'Lato', sans-serif;
   background-color: var(--background-light);
   color: var(--text-light);
   transition: background-color 0.3s, color 0.3s;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -27,24 +39,28 @@ body {
   margin: 2rem auto;
   padding: 2.5rem;
   background: var(--card-bg-light);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   position: relative;
   transition: background-color 0.3s;
 }
 
-/* --- Tema Oscuro --- */
 body.dark {
   background-color: var(--background-dark);
   color: var(--text-dark);
 }
-.dark .container, .dark .card {
+.dark .container {
   background: var(--card-bg-dark);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  border-color: var(--border-color-dark);
 }
 .dark h1, .dark h2, .dark h3 {
-  color: #f5f5f5;
+  color: #f9fafb;
+}
+.dark .header h1 {
+  color: #ffffff;
+}
+.dark .header h2 {
+  color: var(--headline-dark);
 }
 .dark .skills-list li {
   background: #333;
@@ -54,14 +70,13 @@ body.dark {
     color: var(--link-dark);
 }
 .dark .card {
-    background-color: #2a2a2a;
+    background-color: var(--card-bg-dark);
     border-color: var(--border-color-dark);
 }
 .dark .job, .dark .project, .dark .education, .dark .language {
     border-left-color: var(--border-color-dark);
 }
 
-/* --- Layout --- */
 .main-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -84,8 +99,8 @@ body.dark {
 .dark .header {
   border-bottom-color: var(--border-color-dark);
 }
-.header h1 { font-family: 'Roboto Slab', serif; font-size: 2.8rem; margin: 0; color: #1d2d3c; }
-.header h2 { font-weight: 300; margin-top: 0.5rem; color: #555; font-size: 1.2rem; }
+.header h1 { font-family: 'Roboto Slab', serif; font-size: 2.8rem; margin: 0; color: var(--text-light); }
+.header h2 { font-weight: 300; margin-top: 0.5rem; color: var(--headline-light); font-size: 1.2rem; }
 .contact-info, .social-links {
   margin-top: 1rem;
   display: flex;
@@ -98,12 +113,16 @@ body.dark {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--secondary-color);
+}
+.dark .contact-info span, .dark .social-links a {
+  color: var(--headline-dark);
 }
 a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
-a:hover { text-decoration: underline; }
+a:hover { color: var(--primary-color-hover); text-decoration: none; }
 
 h3 {
-  color: #1d2d3c;
+  color: var(--text-light);
   border-bottom: 2px solid var(--primary-color);
   padding-bottom: 0.5rem;
   margin-top: 0;
@@ -126,7 +145,10 @@ h3 {
 }
 .job h4, .project h4, .education h4, .language h4 {
   margin: 0 0 0.25rem;
-  color: var(--primary-color);
+  color: var(--text-light);
+}
+.dark .job h4, .dark .project h4, .dark .education h4, .dark .language h4 {
+  color: #f9fafb;
 }
 .job p, .project p, .education p, .language p {
   margin: 0.25rem 0;
@@ -136,9 +158,8 @@ h3 {
   font-size: 0.9rem;
 }
 .dark .job p em, .dark .education p em {
-  color: #a0a0a0;
+  color: var(--headline-dark);
 }
-
 
 .skills-list {
   list-style: none;
@@ -148,12 +169,25 @@ h3 {
   gap: 0.5rem;
 }
 .skills-list li {
-  background: #e9ecef;
-  color: #333;
+  background: var(--skill-bg-light);
+  color: var(--skill-text-light);
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
 }
+.skills-list li:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.dark .skills-list li {
+  background: var(--skill-bg-dark);
+  color: var(--skill-text-dark);
+}
+
 h4 {
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
@@ -172,8 +206,8 @@ h4 {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: none;
-  border: 1px solid #ccc;
+  background: var(--card-bg-light);
+  border: 1px solid var(--border-color-light);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -185,21 +219,22 @@ h4 {
   transition: all 0.3s ease;
 }
 .theme-toggle:hover {
-  background-color: #f0f0f0;
+  transform: scale(1.1);
 }
 .dark .theme-toggle {
-  color: #fff;
-  border-color: #555;
-}
-.dark .theme-toggle:hover {
-  background-color: #333;
+  background: var(--card-bg-dark);
+  color: #f9fafb;
+  border-color: var(--border-color-dark);
 }
 
 .download-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
     width: 100%;
     padding: 1rem;
-    background: #28a745;
+    background: var(--download-btn-bg);
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -211,7 +246,13 @@ h4 {
     transition: background-color 0.2s ease;
 }
 .download-btn:hover {
-    background: #218838;
+    background: var(--download-btn-hover);
+}
+.dark .download-btn {
+    background: var(--download-btn-bg-dark);
+}
+.dark .download-btn:hover {
+    background: var(--download-btn-hover-dark);
 }
 
 .toggle-button {

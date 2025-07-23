@@ -14,9 +14,10 @@ import Languages from './components/Languages';
 import ThemeToggle from './components/ThemeToggle';
 import CVDocument from './components/CVDocument';
 
-import './App.css';
+import './styles/App.css'; // Asegúrate que la ruta sea correcta si moviste el archivo
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
+// 👇 CAMBIO AQUÍ: Importamos el nuevo icono
+import { faFileArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 const App: FC = () => {
   const [theme, toggleTheme] = useTheme();
@@ -44,7 +45,8 @@ const App: FC = () => {
       <PDFDownloadLink document={<CVDocument />} fileName="FaridMaloof_CV_Profesional.pdf">
         {({ loading }) => (
           <button className="download-btn">
-            {loading ? 'Generando PDF...' : <><FontAwesomeIcon icon={faDownload} /> Descargar CV Resumido</>}
+            {loading ? 'Generando PDF...' : <><FontAwesomeIcon icon={faFileArrowDown} /> Descargar CV Resumido</>} 
+            {/* 👆 CAMBIO AQUÍ: Usamos el nuevo icono */}
           </button>
         )}
       </PDFDownloadLink>
