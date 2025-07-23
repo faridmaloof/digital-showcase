@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+node_modules/*
 /node_modules  # La carpeta gigante con todas las librerías. Se regenera con `npm install`.
 /.pnp
 .pnp.js
