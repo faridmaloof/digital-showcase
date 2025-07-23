@@ -1,4 +1,4 @@
-import { FC } from 'react'; // El único que puede necesitar React si usaras hooks antiguos
+import type { FC } from 'react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import profileData from './data/profileData.json';
 import { useTheme } from './hooks/useTheme';
