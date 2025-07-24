@@ -15,7 +15,7 @@
       "title": "QA Automation Engineer",
       "startDate": { "year": 2023, "month": "Jun" },
       "endDate": "Presente",
-      "description": "Lidero la definición y ejecución de estrategias de prueba para productos financieros. Automatizo flujos de trabajo críticos, reduciendo el tiempo de regresión en un 40%. Colaboro en el diseño de productos para asegurar la calidad desde el inicio, resultando en una disminución del 25% en bugs post-lanzamiento.",
+      "description": "Responsable de diseñar y ejecutar la estrategia integral de pruebas end-to-end para productos financieros clave en un entorno ágil. Lidero la creación y mantenimiento de frameworks de automatización robustos para pruebas de UI, API y performance (Selenium, Cypress, JMeter), logrando una reducción del 40% en los tiempos de regresión y acelerando los ciclos de despliegue.\n\nColaboro proactivamente con equipos de desarrollo y producto desde las fases iniciales, analizando especificaciones y aportando al diseño de la arquitectura para minimizar defectos, lo que ha resultado en una disminución del 25% en bugs críticos post-lanzamiento.\n\nOptimizo continuamente los procesos de QA, implementando mejores prácticas de CI/CD a través de Azure DevOps y analizando bases de datos de defectos para mejorar la calidad del producto de forma proactiva.",
       "featured": true
     },
     {
@@ -23,7 +23,7 @@
       "title": "Development & QA Tester",
       "startDate": { "year": 2022, "month": "Jul" },
       "endDate": { "year": 2023, "month": "Jun" },
-      "description": "Diseñé y ejecuté planes de prueba exhaustivos para aplicaciones web y móviles. Implementé frameworks de automatización desde cero usando Selenium y Cypress, optimizando la cobertura de pruebas y la eficiencia del equipo.",
+      "description": "En un rol híbrido, lideré la iniciativa de 'Estandarización de la Automatización de Pruebas', estableciendo guías y procesos para mejorar la eficiencia del equipo. Diseñé e implementé desde cero frameworks de automatización con Selenium (Java) y Cypress, lo que resultó en una reducción significativa de los tiempos de prueba manual y un aumento del 30% en la cobertura de regresión.\n\nFui responsable del ciclo completo de QA, incluyendo el análisis de especificaciones, diseño de planes de prueba, ejecución de pruebas funcionales y de rendimiento, y el reporte detallado de defectos.",
       "featured": true
     },
     {
@@ -31,7 +31,7 @@
       "title": "Ingeniero Especialista",
       "startDate": { "year": 2021, "month": "Ago" },
       "endDate": { "year": 2022, "month": "Jun" },
-      "description": "Gestioné proyectos de desarrollo de software bajo estándares PMI y metodologías ágiles. Lideré equipos de desarrollo, planificando sprints y gestionando recursos para asegurar la entrega puntual de soluciones tecnológicas innovadoras.",
+      "description": "Como Ingeniero Especialista, gestioné proyectos de software de alta complejidad fusionando estándares del PMI con metodologías ágiles (Scrum/Kanban). Lideré equipos multidisciplinarios, asumiendo la planificación de sprints, la asignación de recursos y la gestión de la comunicación para garantizar entregas de alto valor.\n\nFui responsable del desarrollo de planes de innovación tecnológica y de la generación de indicadores de gestión (KPIs) para monitorear el progreso y asegurar la alineación con los objetivos estratégicos del negocio.",
       "featured": true
     },
     {
@@ -39,48 +39,48 @@
       "title": "Senior J2EE Developer",
       "startDate": { "year": 2021, "month": "Nov" },
       "endDate": { "year": 2022, "month": "Feb" },
-      "description": "Lideré el diseño e implementación de soluciones de software robustas utilizando Java y Spring Boot. Colaboré con el equipo de arquitectura para diseñar soluciones técnicas escalables y eficientes, utilizando servicios de AWS como EC2 y RDS.",
+      "description": "Actuando como desarrollador senior en un proyecto de alta disponibilidad, lideré el ciclo de vida completo del desarrollo de microservicios utilizando Java y Spring Boot. Colaboré estrechamente con el equipo de arquitectura en el diseño de soluciones técnicas escalables, implementando despliegues en la nube de AWS con servicios como EC2 y RDS.\n\nFui un referente técnico para el equipo, realizando revisiones de código (code reviews) y proporcionando mentoría a desarrolladores junior para asegurar la calidad y las buenas prácticas del código.",
       "featured": false
     },
     {
-        "company": "GreenSQA S.A",
-        "title": "Software Test Engineer",
-        "startDate": { "year": 2020, "month": "Feb" },
-        "endDate": { "year": 2021, "month": "Feb" },
-        "description": "Ejecuté pruebas funcionales y no funcionales, desarrollando robots de prueba para maximizar la cobertura y minimizar el esfuerzo. Reporté no conformidades y contribuí a la mejora de las metodologías de testing.",
-        "featured": false
+      "company": "GreenSQA S.A",
+      "title": "Software Test Engineer",
+      "startDate": { "year": 2020, "month": "Feb" },
+      "endDate": { "year": 2021, "month": "Feb" },
+      "description": "Actué como Ingeniero de Pruebas integral, abarcando el ciclo de vida completo del testing en proyectos gestionados bajo metodologías ágiles. Fui responsable del análisis de requerimientos, la planificación, el diseño y la ejecución de pruebas tanto manuales como automatizadas (funcionales y no funcionales).\n\nDesarrollé scripts de automatización ('robots') para optimizar la cobertura y reducir el esfuerzo manual, además de configurar las herramientas necesarias para la prestación de los servicios de QA. Jugué un papel clave en la identificación y reporte de no conformidades, contribuyendo activamente a la mejora continua de las metodologías de prueba de la organización.",
+      "featured": false
     },
     {
-        "company": "Busscar de Colombia",
-        "title": "Senior Software Developer",
-        "startDate": { "year": 2017, "month": "Sep" },
-        "endDate": { "year": 2020, "month": "Feb" },
-        "description": "Diseñé y desarrollé sistemas de Gestión de Datos de Producto (PDM) utilizando herramientas web y Visual Studio (C#, VB.Net), integrando con diversas bases de datos (MySQL, Oracle, SQL Server).",
-        "featured": false
+      "company": "Busscar de Colombia",
+      "title": "Senior Software Developer",
+      "startDate": { "year": 2017, "month": "Sep" },
+      "endDate": { "year": 2020, "month": "Feb" },
+      "description": "Como Desarrollador Senior, lideré el diseño y desarrollo de aplicaciones críticas para la gestión de producción y datos. Mi proyecto principal fue la creación de un sistema de Product Data Management (PDM) para centralizar y asegurar la documentación de ingeniería. Adicionalmente, desarrollé un sistema de picking que se integraba con el ERP para optimizar la logística de materiales en la línea de producción.\n\nAdemás de mis responsabilidades de desarrollo, brindé soporte técnico, realicé revisiones de código y ofrecí mentoría a desarrolladores junior, utilizando un stack tecnológico basado en .NET (C#, VB.NET) y bases de datos como SQL Server, Oracle y MySQL.",
+      "featured": false
     },
     {
       "company": "EMCALI EICE ESP",
       "title": "Technology Solutions Analyst",
       "startDate": { "year": 2016, "month": "Jun" },
       "endDate": { "year": 2017, "month": "Sep" },
-      "description": "Desarrollé y mantuve aplicaciones internas para el sector de las telecomunicaciones, colaborando en el análisis de requisitos y en la generación de soluciones tecnológicas innovadoras.",
+      "description": "Fui responsable del ciclo de vida completo de aplicaciones internas críticas para el área de telecomunicaciones. Mis funciones abarcaban desde el análisis de requerimientos y el desarrollo de nuevas funcionalidades hasta el mantenimiento evolutivo y la resolución de incidentes, brindando soporte técnico de segundo nivel para garantizar la continuidad operativa de los servicios de ADSL y telefonía IP.\n\nParticipé activamente en la evaluación de nuevas tecnologías para proponer mejoras y soluciones innovadoras que optimizaran los procesos del negocio.",
       "featured": false
     }
   ],
   "projects": [
     {
-      "title": "Control de Gastos Personales",
-      "description": "Aplicación de escritorio en C# para la gestión de finanzas personales.",
+      "title": "Aplicación Web de Finanzas Personales",
+      "description": "Aplicación web completa para la gestión de finanzas personales, desarrollada principalmente en C# con el framework ASP.NET. El proyecto demuestra la implementación del patrón MVC (Modelo-Vista-Controlador), utilizando HTML y Razor Pages para construir una interfaz de usuario dinámica e interactiva, mientras que la lógica de negocio y la persistencia de datos se manejan en el backend.",
       "repoUrl": "https://github.com/faridmaloof/ControlGastos"
     },
     {
-      "title": "Sistema de Inventario Básico",
-      "description": "Aplicación web ligera en JavaScript para la gestión de inventarios.",
+      "title": "Sistema de Gestión de Inventario (Front-End)",
+      "description": "Aplicación web front-end para la gestión de inventarios, construida con JavaScript puro (Vanilla JS), HTML5 y CSS3 para demostrar un dominio de las tecnologías web fundamentales sin frameworks. El código evidencia una manipulación directa del DOM, gestión de estado del lado del cliente y un diseño responsive.",
       "repoUrl": "https://github.com/faridmaloof/inventario_basico"
     },
     {
-      "title": "Desafío de QA Automation",
-      "description": "Repositorio con soluciones a desafíos de automatización de pruebas en Python.",
+      "title": "Portafolio de Soluciones para Desafíos de QA Automation",
+      "description": "Este repositorio, desarrollado íntegramente en Python, sirve como un portafolio práctico de mis habilidades en automatización de pruebas. Cada solución aborda un desafío específico y demuestra mi competencia en la automatización de UI con Selenium WebDriver, la estructura y ejecución de pruebas con Pytest, y la aplicación de patrones de diseño como el Page Object Model (POM).",
       "repoUrl": "https://github.com/faridmaloof/QA-Automation-Challenge"
     }
   ],
@@ -108,9 +108,45 @@
     }
   ],
   "skills": {
-    "technical": ["Java", "C#", ".NET", "ASP.NET Core", "JavaScript", "TypeScript", "React.js", "Node.js", "Python", "SQL", "PL/SQL", "HTML", "CSS"],
-    "tools": ["Selenium", "Cypress", "Playwright", "Appium", "JMeter", "Postman", "Docker", "Kubernetes", "Git", "Jira", "Azure DevOps", "Jenkins"],
-    "methodologies": ["Agile", "Scrum", "CI/CD", "TDD", "BDD", "Microservicios", "Arquitectura de Software", "QA Automation"]
+    "technical": [
+      "Java",
+      "C#",
+      ".NET",
+      "ASP.NET Core",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Node.js",
+      "Python",
+      "SQL",
+      "PL/SQL",
+      "HTML",
+      "CSS"
+    ],
+    "tools": [
+      "Selenium",
+      "Cypress",
+      "Playwright",
+      "Appium",
+      "JMeter",
+      "Postman",
+      "Docker",
+      "Kubernetes",
+      "Git",
+      "Jira",
+      "Azure DevOps",
+      "Jenkins"
+    ],
+    "methodologies": [
+      "Agile",
+      "Scrum",
+      "CI/CD",
+      "TDD",
+      "BDD",
+      "Microservicios",
+      "Arquitectura de Software",
+      "QA Automation"
+    ]
   },
   "languages": [
     { "name": "Español", "proficiency": "Nativo" },
@@ -124,21 +160,51 @@
       "featured": true
     },
     {
+      "name": "Selenium WebDriver with Python",
+      "authority": "Applitools",
+      "date": { "year": 2024, "month": "Feb" },
+      "featured": true
+    },
+    {
+      "name": "SQL (Advanced)",
+      "authority": "HackerRank",
+      "date": { "year": 2025, "month": "Jan" },
+      "featured": true
+    },
+    {
       "name": "Scrum Master Professional Certificate (SMPC®)",
       "authority": "CertiProf",
       "date": { "year": 2020, "month": "May" },
       "featured": true
     },
     {
-      "name": "Scrum Product Owner Professional Certificate (SPOPC)",
-      "authority": "CertiProf",
-      "date": { "year": 2020, "month": "May" },
-      "featured": true
+      "name": "API Testing in Python",
+      "authority": "Applitools",
+      "date": { "year": 2024, "month": "Feb" },
+      "featured": false
     },
     {
       "name": "Agile Coach Professional Certificate (ACPC)",
       "authority": "CertiProf",
       "date": { "year": 2021, "month": "Nov" },
+      "featured": false
+    },
+    {
+      "name": "Diplomado Internacional de Gerencia de Proyectos bajo lineamientos PMI",
+      "authority": "Asturias Corporación Universitaria",
+      "date": { "year": 2024, "month": "Sep" },
+      "featured": false
+    },
+    {
+      "name": "Master Web Api ASP NET Core 9",
+      "authority": "Udemy",
+      "date": { "year": 2025, "month": "Jan" },
+      "featured": false
+    },
+    {
+      "name": "Architecting with Google Kubernetes Engine",
+      "authority": "Coursera",
+      "date": { "year": 2020, "month": "Nov" },
       "featured": false
     },
     {
@@ -148,10 +214,10 @@
       "featured": false
     },
     {
-        "name": "Architecting with Google Kubernetes Engine",
-        "authority": "Coursera",
-        "date": { "year": 2020, "month": "Nov" },
-        "featured": false
+      "name": "Scrum Product Owner Professional Certificate (SPOPC)",
+      "authority": "CertiProf",
+      "date": { "year": 2020, "month": "May" },
+      "featured": false
     }
   ]
 }
